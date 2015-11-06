@@ -78,4 +78,28 @@ public class TestMMCIFSeqResParsing {
 		assertNotNull(seqRes2);
 		assertEquals(atomGroups2.size(), seqRes2.size());
 	}
+	
+	@Test
+	public void testAtomLigands() throws IOException, StructureException {
+		// In this entry _pdbx_struct_assembly_gen contains multiline quoting (quoting with "\n;" ) in loop field
+		AtomCache cache = new AtomCache();
+		cache.setUseMmCif(true);
+		StructureIO.setAtomCache(cache); 
+				
+		FileParsingParameters params = cache.getFileParsingParams();
+		params.setParseBioAssembly(true);
+		
+		StructureIO.setAtomCache(cache);
+
+		Structure sCif = StructureIO.getStructure("4HHB");
+		
+		Chain chainA = sCif.getChainByPDB("A");
+		
+		System.out.println("AtomLigands:");
+		for (Group g : chainA.getAtomLigands()) {
+			System.out.println(g.toString());
+		}
+		
+		assertEquals(1, chainA.getAtomLigands().size());
+	}
 }

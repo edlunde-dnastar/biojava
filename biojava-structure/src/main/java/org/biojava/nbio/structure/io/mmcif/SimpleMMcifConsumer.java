@@ -703,7 +703,7 @@ public class SimpleMMcifConsumer implements MMcifConsumer {
 			String id = c.getChainID();
 			// Use the seqResGroups from _pdbx_poly_seq_scheme
 			if (seqResGroups.containsKey(id)) {
-				c.setSeqResGroups(seqResGroups.get(id));
+				c.setSeqResGroups(alignSeqResidues(seqResGroups.get(id), c.getAtomGroups()));
 			} 
 		}
 		
@@ -1691,11 +1691,7 @@ public class SimpleMMcifConsumer implements MMcifConsumer {
 		// hold these in HashMap of AsymId that we can use to assign at documentEnd().
 		try {
 			int resNum = Integer.parseInt(ppss.getPdb_seq_num());
-			char ins = ' ';
-			if (ppss.getPdb_ins_code() != null && !ppss.getPdb_ins_code().equals("?") && ppss.getPdb_ins_code().length() > 0) {
-				ins = ppss.getPdb_ins_code().charAt(0);
-			}
-			g.setResidueNumber(new ResidueNumber(chainId, resNum, ins));
+			g.setResidueNumber(new ResidueNumber(chainId, resNum, null));
 			
 			// Stash the group in a list so that it can be added later to the correct chain as SEQRES
 			if (!seqResGroups.containsKey(asymId)) {
@@ -1869,6 +1865,38 @@ public class SimpleMMcifConsumer implements MMcifConsumer {
 		this.structConn.add(structConn);
 	}
 
+	/**
+	 * Zipper through the seqres and chain, including either a Group from seqres or chain, 
+	 * but preferring to include the actual chain Group if it exists.  This allows the 
+	 * Chain.getAtomLigands() to filter out polymer groups that have defined seqres and
+	 * allows seqres to include groups that don't have matching AtomGroups (gaps).
+	 * 
+	 * @param seqres
+	 * @param chain
+	 * @return
+	 */
+	private List<Group> alignSeqResidues(List<Group> seqres, List<Group>chain) {
+		ArrayList<Group> alignedSeqResidues = new ArrayList<Group>();
+		
+		for (Group g : seqres) {
+			boolean match = false;
+			// Do we have a match in chain?
+			for (Group cg : chain) {
+				ResidueNumber r1 = cg.getResidueNumber();
+				ResidueNumber r2 = g.getResidueNumber();
+				
+				if (r1.equals(r2)) {
+					match = true;
+					alignedSeqResidues.add(cg);
+					break;
+				}
+			}
+			
+			if (!match) alignedSeqResidues.add(g);
+		}
+		
+		return alignedSeqResidues;
+	}
 }
 
 
