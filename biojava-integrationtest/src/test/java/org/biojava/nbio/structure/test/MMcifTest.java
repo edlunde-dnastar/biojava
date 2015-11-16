@@ -41,7 +41,6 @@ public class MMcifTest extends TestCase {
 
 	public MMcifTest(){
 		super();
-		setHeaderOnly(false);
 	}
 
 
@@ -57,10 +56,9 @@ public class MMcifTest extends TestCase {
 	}
 
 	public void testLoad(){
-
 		// a structure with microheterogeneity
 		//comparePDB2cif("2CI1","A");
-
+		
 		// test a simple protein
 		comparePDB2cif("5pti","A");
 
@@ -95,7 +93,7 @@ public class MMcifTest extends TestCase {
 
 		SimpleMMcifConsumer consumer = new SimpleMMcifConsumer();
 		FileParsingParameters params = new FileParsingParameters();
-		params.setHeaderOnly(headerOnly);
+		params.setHeaderOnly(true);
 		consumer.setFileParsingParameters(params);
 
 

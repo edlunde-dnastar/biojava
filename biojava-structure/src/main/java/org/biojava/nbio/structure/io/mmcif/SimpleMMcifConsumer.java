@@ -51,8 +51,11 @@ import org.biojava.nbio.structure.ResidueNumber;
 import org.biojava.nbio.structure.SSBond;
 import org.biojava.nbio.structure.SSBondImpl;
 import org.biojava.nbio.structure.SeqMisMatch;
+import org.biojava.nbio.structure.SeqMisMatch;
+import org.biojava.nbio.structure.SeqMisMatchImpl;
 import org.biojava.nbio.structure.SeqMisMatchImpl;
 import org.biojava.nbio.structure.Site;
+import org.biojava.nbio.structure.Structure;
 import org.biojava.nbio.structure.Structure;
 import org.biojava.nbio.structure.StructureException;
 import org.biojava.nbio.structure.StructureImpl;
@@ -60,7 +63,6 @@ import org.biojava.nbio.structure.StructureTools;
 import org.biojava.nbio.structure.io.BondMaker;
 import org.biojava.nbio.structure.io.FileParsingParameters;
 import org.biojava.nbio.structure.io.LigandConnectMaker;
-import org.biojava.nbio.structure.io.SeqRes2AtomAligner;
 import org.biojava.nbio.structure.io.mmcif.model.AtomSite;
 import org.biojava.nbio.structure.io.mmcif.model.AuditAuthor;
 import org.biojava.nbio.structure.io.mmcif.model.Cell;
@@ -125,7 +127,7 @@ public class SimpleMMcifConsumer implements MMcifConsumer {
 	private List<Chain>      current_model;
 	private List<Entity>     entities;
 	private List<StructRef>  strucRefs;
-	private List<Chain>      seqResChains;
+	//private List<Chain>      seqResChains;
 	private List<Chain>      entityChains; // needed to link entities, chains and compounds...
 	private List<StructAsym> structAsyms;  // needed to link entities, chains and compounds...
 	private List<PdbxStructOperList> structOpers ; //
@@ -138,6 +140,8 @@ public class SimpleMMcifConsumer implements MMcifConsumer {
 	private List<StructNcsOper> structNcsOper;
 	private List<StructRefSeqDif> sequenceDifs;
 	private List<StructSiteGen> structSiteGens;
+	
+	private HashMap<String, List<Group>> seqResGroups;
 
 	/**
 	 * A map of asym ids (internal chain ids) to strand ids (author chain ids) 
@@ -636,7 +640,6 @@ public class SimpleMMcifConsumer implements MMcifConsumer {
 		current_model = new ArrayList<Chain>();
 		entities      = new ArrayList<Entity>();
 		strucRefs     = new ArrayList<StructRef>();
-		seqResChains  = new ArrayList<Chain>();
 		entityChains  = new ArrayList<Chain>();
 		structAsyms   = new ArrayList<StructAsym>();
 		asymStrandId  = new HashMap<String, String>();
@@ -652,6 +655,7 @@ public class SimpleMMcifConsumer implements MMcifConsumer {
 		structNcsOper = new ArrayList<StructNcsOper>();
 		sequenceDifs = new ArrayList<StructRefSeqDif>();
 		structSiteGens = new ArrayList<StructSiteGen>();
+		seqResGroups = new HashMap<String, List<Group>>();
 	}
 
 
@@ -682,15 +686,6 @@ public class SimpleMMcifConsumer implements MMcifConsumer {
 			logger.debug("Entity {} matches asym_id: {}", asym.getEntity_id(), asym.getId() );
 
 			asymId2entityId.put(asym.getId(), asym.getEntity_id());
-			
-			Chain s = getEntityChain(asym.getEntity_id());
-			Chain seqres = (Chain)s.clone();
-			// to solve issue #160 (e.g. 3u7t)
-			seqres = removeSeqResHeterogeneity(seqres);
-			seqres.setChainID(asym.getId());
-
-			seqResChains.add(seqres);
-			logger.debug(" seqres: " + asym.getId() + " " + seqres + "<") ;
 
 			// adding the compounds (entities)
 			addCompounds(asym);
@@ -701,16 +696,8 @@ public class SimpleMMcifConsumer implements MMcifConsumer {
 			logger.warn("No _struct_asym category in file, no SEQRES groups will be added."); 
 		}
 
-		if ( params.isAlignSeqRes() ){		
-			alignSeqRes();
-		}
-
 		if ( params.shouldCreateAtomBonds()) {
 			addBonds();
-		}
-		
-		if ( params.shouldCreateLigandConects()) {
-			addLigandConnections();
 		}
 		
 		//TODO: add support for structure.setConnections(connects);
@@ -721,6 +708,31 @@ public class SimpleMMcifConsumer implements MMcifConsumer {
 			
 			asymStrandId = asymId2StrandIdFromAtomSites;
 			noAsymStrandIdMappingPresent = true;
+		}
+		
+		// Set the SeqRes groups.
+		if (! params.isHeaderOnly())
+		for (Chain c : structure.getChains()) {
+			String id = c.getChainID();
+			// Use the seqResGroups from _pdbx_poly_seq_scheme
+			if (seqResGroups.containsKey(id)) {
+				if (params.isAlignSeqRes()) {
+					c.setSeqResGroups(alignSeqResidues(seqResGroups.get(id), c.getAtomGroups()));
+				} else {
+					// use just atom groups
+					List<Group> groups = new ArrayList<Group>();
+					for (Group g : c.getAtomGroups()) {
+						if (g.getType() == GroupType.AMINOACID || g.getType() == GroupType.NUCLEOTIDE) {
+							groups.add(g);
+						}
+					}
+					c.setSeqResGroups(groups);
+				}
+			} 
+		}
+		
+		if ( params.shouldCreateLigandConects()) {
+			addLigandConnections();
 		}
 		
 		// mismatching Author assigned chain IDS and PDB internal chain ids:
@@ -741,17 +753,14 @@ public class SimpleMMcifConsumer implements MMcifConsumer {
 
 						chain.setChainID(newChainId);
 						chain.setInternalChainID(asym);
+						
 						// set chain of all groups
 						for(Group g : chain.getAtomGroups()) {
 							ResidueNumber resNum = g.getResidueNumber();
 							if(resNum != null)
 								resNum.setChainId(newChainId);
 						}
-						for(Group g : chain.getSeqResGroups()) {
-							ResidueNumber resNum = g.getResidueNumber();
-							if(resNum != null)
-								resNum.setChainId(newChainId);
-						}
+						
 						Chain known =  isKnownChain(chain.getChainID(), pdbChains);
 						if ( known == null ){
 							pdbChains.add(chain);
@@ -962,13 +971,13 @@ public class SimpleMMcifConsumer implements MMcifConsumer {
 	 * @param c
 	 * @return
 	 */
-	private Chain removeSeqResHeterogeneity(Chain c) {
+	private List<Group> removeSeqResHeterogeneity(List<Group> c) {
 		
-		Chain trimmedChain = new ChainImpl();
+		List<Group> trimmedGroups = new ArrayList<Group>();
 		
 		ResidueNumber lastResNum = null;
 
-		for (Group g:c.getAtomGroups()) {
+		for (Group g:c) {
 			
 			// note we have to deep copy this, otherwise they stay linked and would get altered in addGroup(g) 
 			ResidueNumber currentResNum = new ResidueNumber(
@@ -977,7 +986,7 @@ public class SimpleMMcifConsumer implements MMcifConsumer {
 					g.getResidueNumber().getInsCode());
 
 			if (lastResNum == null || !lastResNum.equals(currentResNum) ) {				
-				trimmedChain.addGroup(g);
+				trimmedGroups.add(g);
 			} else {
 				logger.debug("Removing seqres group because it seems to be repeated in entity_poly_seq, most likely has hetero='y': "+g);
 			}
@@ -985,7 +994,7 @@ public class SimpleMMcifConsumer implements MMcifConsumer {
 			lastResNum = currentResNum;
 
 		}
-		return trimmedChain;
+		return trimmedGroups;
 	}
 
 	private void addBonds() {
@@ -996,63 +1005,6 @@ public class SimpleMMcifConsumer implements MMcifConsumer {
 	private void addLigandConnections(){
 		LigandConnectMaker maker = new LigandConnectMaker(structure);
 		maker.addLigandConnections();
-	}
-
-	private void alignSeqRes() {
-
-		logger.debug("Parsing mode align_seqres, will align to ATOM to SEQRES sequence");
-		
-		// fix SEQRES residue numbering for all models
-
-		for (int model=0;model<structure.nrModels();model++) {
-			
-			List<Chain> atomList   = structure.getModel(model);
-			
-			for (Chain seqResChain: seqResChains){
-
-				// this extracts the matching atom chain from atomList
-				Chain atomChain = SeqRes2AtomAligner.getMatchingAtomRes(seqResChain, atomList);
-
-				if (atomChain == null) {
-					// most likely there's no observed residues at all for the seqres chain: can't map
-					// e.g. 3zyb: chains with asym_id L,M,N,O,P have no observed residues
-					logger.warn("Could not map SEQRES chain with asym_id={} to any ATOM chain. Most likely there's no observed residues in the chain.",
-							seqResChain.getChainID());
-					continue;
-				}
-
-				//map the atoms to the seqres...
-
-				// we need to first clone the seqres so that they stay independent for different models
-				List<Group> seqResGroups = new ArrayList<Group>();
-				for (int i=0;i<seqResChain.getAtomGroups().size();i++) {
-					seqResGroups.add((Group)seqResChain.getAtomGroups().get(i).clone());
-				}
-
-				for ( int seqResPos = 0 ; seqResPos < seqResGroups.size(); seqResPos++) {
-					Group seqresG = seqResGroups.get(seqResPos);
-					boolean found = false;
-					for ( Group atomG: atomChain.getAtomGroups()) {
-
-						int internalNr = getInternalNr (atomG);
-
-						if (seqresG.getResidueNumber().getSeqNum() == internalNr ) {															
-							seqResGroups.set(seqResPos, atomG);
-							found = true;
-							break;
-						}
-
-
-					}
-					if ( ! found)
-						// so far the residue number has tracked internal numbering.
-						// however there are no atom records, as such this can't be a PDB residue number...
-						seqresG.setResidueNumber(null);
-				}
-				atomChain.setSeqResGroups(seqResGroups);
-
-			}
-		}
 	}
 
 	private int getInternalNr(Group atomG) {
@@ -1761,6 +1713,32 @@ public class SimpleMMcifConsumer implements MMcifConsumer {
 
 		// replace the group asym ids with the real PDB ids!
 		replaceGroupSeqPos(ppss);
+		
+		// From the ppss -> create a new Group.
+		String aminoCode3 = ppss.getMon_id(); // auth_mon_id / pdbx_mon_id will be ? for missing residue.
+		Character aminoCode1 = StructureTools.get1LetterCode(aminoCode3);
+		String asymId = ppss.getAsym_id();
+		String chainId = ppss.getPdb_strand_id();
+		Group g = getNewGroup(aminoCode1, aminoCode3);
+		
+		// Until the polySeqSchemes (seqres) is correctly assigned to its Chain,
+		// hold these in HashMap of AsymId that we can use to assign at documentEnd().
+		Integer resNum = null;
+		try {
+			resNum = Integer.parseInt(ppss.getPdb_seq_num());
+		} catch (NumberFormatException e) {
+			logger.warn("Unable to create residue number for _pdbx_poly_seq_scheme: " + e.getMessage());
+		}
+		Character c = null; // insertion code handling, needed for
+		if (ppss.getPdb_ins_code() != null && !ppss.getPdb_ins_code().equals("?") && !ppss.getPdb_ins_code().equals(".")) c = ppss.getPdb_ins_code().charAt(0);
+		g.setResidueNumber(new ResidueNumber(chainId, resNum, c));
+		// System.out.println(chainId + ":" + g);
+		
+		// Stash the group in a list so that it can be added later to the correct chain as SEQRES
+		if (!seqResGroups.containsKey(asymId)) {
+			seqResGroups.put(asymId, new ArrayList<Group>());
+		}
+		seqResGroups.get(asymId).add(g);
 
 		// merge the EntityPolySeq info and the AtomSite chains into one...
 		//already known ignore:
@@ -1777,6 +1755,37 @@ public class SimpleMMcifConsumer implements MMcifConsumer {
 
 		asymStrandId.put(ppss.getAsym_id(), ppss.getPdb_strand_id());
 
+	}
+	
+	/** initiate new resNum, either Hetatom, Nucleotide, or AminoAcid */
+	private Group getNewGroup(Character aminoCode1, String aminoCode3) {
+
+		if ( params.isLoadChemCompInfo() ){
+			Group g =  ChemCompGroupFactory.getGroupFromChemCompDictionary(aminoCode3);
+			if ( g != null)
+				return g;
+		}
+
+		Group group;
+		if (aminoCode1 == null || StructureTools.UNKNOWN_GROUP_LABEL == aminoCode1 ){
+			group = new HetatomImpl();
+
+		} else if(StructureTools.isNucleotide(aminoCode3))  {
+			// it is a nucleotide
+			NucleotideImpl nu = new NucleotideImpl();
+			group = nu;
+
+		} else {
+			AminoAcidImpl aa = new AminoAcidImpl() ;
+			aa.setAminoType(aminoCode1);
+			aa.setRecordType(AminoAcid.SEQRESRECORD); // For TestSeqResParsing.java in IntegrationTests.
+			group = aa ;
+		}
+		
+		group.setPDBName(aminoCode3);
+
+		//		System.out.println("new resNum type: "+ resNum.getType() );
+		return  group ;
 	}
 
 
@@ -1894,6 +1903,53 @@ public class SimpleMMcifConsumer implements MMcifConsumer {
 		this.structConn.add(structConn);
 	}
 
+	/**
+	 * Zipper through the seqres and chain, including either a Group from seqres or chain, 
+	 * but preferring to include the actual chain Group if it exists.  This allows the 
+	 * Chain.getAtomLigands() to filter out polymer groups that have defined seqres and
+	 * allows seqres to include groups that don't have matching AtomGroups (gaps).
+	 * 
+	 * @param seqres
+	 * @param chain
+	 * @return
+	 */
+	private List<Group> alignSeqResidues(List<Group> seqres, List<Group>chain) {
+		ArrayList<Group> alignedSeqResidues = new ArrayList<Group>();
+		
+		// A queue of residues that can be aligned to the seqres groups.
+		List<Group> atomgroups = new ArrayList<Group>();
+		atomgroups.addAll(chain);
+		
+		for (Group g : seqres) {
+			boolean match = false;
+			// Do we have a match in chain?
+			for (int i = 0; i < atomgroups.size(); i++) {
+				Group cg = atomgroups.get(i);
+				// chain residues may not have chainId's set.
+				int r1 = cg.getResidueNumber().getSeqNum();
+				int r2 = g.getResidueNumber().getSeqNum();
+				
+				Character c1 = cg.getResidueNumber().getInsCode();
+				Character c2 = g.getResidueNumber().getInsCode();
+				
+				if (r1 == r2) {
+					// If the SeqRes group is non-null, we should check it, otherwise don't.
+					if ((c2 != null && c2.equals(c1)) || c2 == null) {
+					// if (r1.getSeqNum() == r2.getSeqNum()) {
+						match = true;
+						alignedSeqResidues.add(cg);
+						atomgroups.remove(i);
+						break;
+					}
+				}
+				
+			}
+			
+			if (!match) alignedSeqResidues.add(g);
+		}
+		//return alignedSeqResidues;
+		return removeSeqResHeterogeneity(alignedSeqResidues);
+	}
 
 	@Override
 	public void newStructSiteGen(StructSiteGen siteGen) { this.structSiteGens.add(siteGen);	}
