@@ -139,4 +139,33 @@ public class TestMMCIFSeqResParsing {
 		Chain chainL = sCif.getChainByPDB("L");
 		assertEquals(36, chainL.getSeqResGroups().size());
 	}
+	
+	/**
+	 * Read in mmCIF _pdbx_poly_seq_scheme when in headerOnly mode.
+	 * @throws IOException
+	 * @throws StructureException
+	 */
+	@Test
+	public void testHeaderOnly() throws IOException, StructureException {
+		// In this entry _pdbx_struct_assembly_gen contains multiline quoting (quoting with "\n;" ) in loop field
+		AtomCache cache = new AtomCache();
+		cache.setUseMmCif(true);
+		StructureIO.setAtomCache(cache); 
+				
+		FileParsingParameters params = cache.getFileParsingParams();
+		params.setParseBioAssembly(true);
+		params.setAlignSeqRes(true);
+		params.setHeaderOnly(true);
+		
+		StructureIO.setAtomCache(cache);
+
+		Structure sCif = StructureIO.getStructure("4HHB");
+		assertEquals(4, sCif.getChains());
+		
+		// Get a chain, show it has SEQRES
+		
+		
+		// Same chain has no AtomGroups.
+		
+	}
 }

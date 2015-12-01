@@ -51,6 +51,7 @@ import org.biojava.nbio.structure.ResidueNumber;
 import org.biojava.nbio.structure.SeqMisMatch;
 import org.biojava.nbio.structure.SeqMisMatchImpl;
 import org.biojava.nbio.structure.Structure;
+import org.biojava.nbio.structure.StructureException;
 import org.biojava.nbio.structure.StructureImpl;
 import org.biojava.nbio.structure.StructureTools;
 import org.biojava.nbio.structure.io.BondMaker;
@@ -699,24 +700,40 @@ public class SimpleMMcifConsumer implements MMcifConsumer {
 		}
 		
 		// Set the SeqRes groups.
-		if (! params.isHeaderOnly())
-		for (Chain c : structure.getChains()) {
-			String id = c.getChainID();
-			// Use the seqResGroups from _pdbx_poly_seq_scheme
-			if (seqResGroups.containsKey(id)) {
-				if (params.isAlignSeqRes()) {
-					c.setSeqResGroups(alignSeqResidues(seqResGroups.get(id), c.getAtomGroups()));
-				} else {
-					// use just atom groups
-					List<Group> groups = new ArrayList<Group>();
-					for (Group g : c.getAtomGroups()) {
-						if (g.getType() == GroupType.AMINOACID || g.getType() == GroupType.NUCLEOTIDE) {
-							groups.add(g);
+		if (! params.isHeaderOnly()) {
+			for (Chain c : structure.getChains()) {
+				String id = c.getChainID();
+				// Use the seqResGroups from _pdbx_poly_seq_scheme
+				if (seqResGroups.containsKey(id)) {
+					if (params.isAlignSeqRes()) {
+						c.setSeqResGroups(alignSeqResidues(seqResGroups.get(id), c.getAtomGroups()));
+					} else {
+						// use just atom groups
+						List<Group> groups = new ArrayList<Group>();
+						for (Group g : c.getAtomGroups()) {
+							if (g.getType() == GroupType.AMINOACID || g.getType() == GroupType.NUCLEOTIDE) {
+								groups.add(g);
+							}
 						}
+						c.setSeqResGroups(groups);
 					}
-					c.setSeqResGroups(groups);
-				}
+				} 
 			} 
+		} else { // Header only, create new Chains for sets of seqResGroups.
+			for (String key: seqResGroups.keySet()) {
+				Chain c = null; 
+				boolean addToStructure = false;
+				try {
+					c = structure.getChainByPDB(key);
+				} catch (StructureException e) {
+					c = new ChainImpl();
+					c.setChainID(key);
+					addToStructure = true;
+				}
+				List<Group> groups = seqResGroups.get(key);
+				c.setSeqResGroups(groups);
+				if (addToStructure) structure.addChain(c);
+			}
 		}
 		
 		// mismatching Author assigned chain IDS and PDB internal chain ids:
