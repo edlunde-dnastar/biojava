@@ -21,63 +21,60 @@
 package demo;
 
 import java.io.IOException;
-import java.util.List;
 
+import org.biojava.nbio.structure.Chain;
+import org.biojava.nbio.structure.Group;
 import org.biojava.nbio.structure.Structure;
 import org.biojava.nbio.structure.StructureException;
 import org.biojava.nbio.structure.align.util.AtomCache;
 import org.biojava.nbio.structure.io.FileParsingParameters;
 import org.biojava.nbio.structure.secstruc.DSSPParser;
 import org.biojava.nbio.structure.secstruc.SecStrucInfo;
-import org.biojava.nbio.structure.secstruc.SecStrucTools;
 
 /**
- * Demonstration of how to load a Structure with the SS information, either from
- * the PDB file annotation (Author's assignment) or from the DSSP file in the
- * PDB servers (DSSP assignment).
+ * Demonstration of how to load a Structure with the SS information,
+ * either from the PDB file annotation (Author's assignment) or from
+ * the DSSP file in the PDB servers (DSSP assignment).
  * 
  * @author Aleix Lafita
  *
  */
 public class DemoLoadSecStruc {
+	
+    public static void main(String[] args) 
+    		throws IOException, StructureException {
+    	
+    	String pdbID = "5pti";
+    	
+        FileParsingParameters params = new FileParsingParameters();
+        //Only change needed to the normal Structure loading
+        params.setParseSecStruc(true); //this is false as DEFAULT
 
-	public static void main(String[] args) throws IOException,
-			StructureException {
+        AtomCache cache = new AtomCache();
+        cache.setFileParsingParams(params);
+        cache.setUseMmCif(false);
 
-		String pdbID = "5pti";
+        //The loaded Structure contains the SS assigned by Author
+        Structure s = cache.getStructure(pdbID);
+        
+        //If the more detailed DSSP prediction is required call this
+        DSSPParser.fetch(pdbID, s, true);
 
-		// Only change needed to the DEFAULT Structure loading
-		FileParsingParameters params = new FileParsingParameters();
-		params.setParseSecStruc(true);
+        //Print the assignment residue by residue
+        System.out.println("Residue assignment: ");
+        for (Chain c : s.getChains()) {
+            for (Group g: c.getAtomGroups()){
 
-		AtomCache cache = new AtomCache();
-		cache.setFileParsingParams(params);
+                if (g.hasAminoAtoms()){
 
-		// Use PDB format, because SS cannot be parsed from mmCIF yet
-		cache.setUseMmCif(false);
+                    SecStrucInfo ss = 
+                    		(SecStrucInfo) g.getProperty(Group.SEC_STRUC);
 
-		// The loaded Structure contains the SS assigned by Author (simple)
-		Structure s = cache.getStructure(pdbID);
-
-		// Print the Author's assignment (from PDB file)
-		System.out.println("Author's assignment: ");
-		List<SecStrucInfo> ssi = SecStrucTools.getSecStrucInfo(s);
-		for (SecStrucInfo ss : ssi) {
-			System.out.println(ss.getGroup().getChain().getChainID() + " "
-					+ ss.getGroup().getResidueNumber() + " "
-					+ ss.getGroup().getPDBName() + " -> " + ss.toString());
-		}
-
-		// If the more detailed DSSP prediction is required call this
-		DSSPParser.fetch(pdbID, s, true);
-
-		// Print the assignment residue by residue
-		System.out.println("DSSP assignment: ");
-		ssi = SecStrucTools.getSecStrucInfo(s);
-		for (SecStrucInfo ss : ssi) {
-			System.out.println(ss.getGroup().getChain().getChainID() + " "
-					+ ss.getGroup().getResidueNumber() + " "
-					+ ss.getGroup().getPDBName() + " -> " + ss.toString());
-		}
-	}
+                    System.out.println(c.getChainID() + 
+                    		" " + g.getResidueNumber() + " " 
+                    		+ g.getPDBName() + " -> " + ss);
+                }
+            }
+        }
+    }
 }

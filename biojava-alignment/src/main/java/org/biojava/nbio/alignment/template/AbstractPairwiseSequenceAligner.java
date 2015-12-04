@@ -23,8 +23,6 @@
 
 package org.biojava.nbio.alignment.template;
 
-import org.biojava.nbio.core.alignment.template.SequencePair;
-import org.biojava.nbio.core.alignment.template.SubstitutionMatrix;
 import org.biojava.nbio.core.sequence.template.Compound;
 import org.biojava.nbio.core.sequence.template.CompoundSet;
 import org.biojava.nbio.core.sequence.template.Sequence;

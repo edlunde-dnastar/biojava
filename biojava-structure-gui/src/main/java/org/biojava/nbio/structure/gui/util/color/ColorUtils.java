@@ -54,12 +54,6 @@ public class ColorUtils
       }
    }
    
-   /**
-    * Rotate a color through HSB space
-    * @param color Starting color
-    * @param fraction Amount to add to the hue. The integer part is discarded to leave a number in [0,1)
-    * @return
-    */
    public static Color rotateHue (Color color, float fraction) {
       
       float af[] = Color.RGBtoHSB(color.getRed(),color.getGreen(),color.getBlue(), null);
@@ -68,10 +62,17 @@ public class ColorUtils
       float saturation = af[1];
       float brightness = af[2];
       
+      //System.out.println(hue + " " + saturation + " " + brightness);
+      
       float hueNew = hue  + fraction;
       
-      Color hsb = Color.getHSBColor(hueNew, saturation, brightness);
-      return new Color(hsb.getRed(), hsb.getGreen(), hsb.getBlue(), color.getAlpha());
+      //System.out.println(hue + " " + hueNew);
+      
+      if ( hueNew > 1 ){
+         hueNew = hueNew - 1;
+      }
+     
+      return Color.getHSBColor(hueNew, saturation, brightness);
    }
    
    public static Color getIntermediate(Color start, Color end, int stepSize, int position ){

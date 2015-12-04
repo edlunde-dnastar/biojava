@@ -31,7 +31,7 @@ public class AmbiguityRNACompoundSet extends RNACompoundSet {
     public static final AmbiguityRNACompoundSet INSTANCE = new AmbiguityRNACompoundSet();
   }
 
-  public static AmbiguityRNACompoundSet getRNACompoundSet() {
+  public static AmbiguityRNACompoundSet getDNACompoundSet() {
     return InitaliseOnDemand.INSTANCE;
   }
 

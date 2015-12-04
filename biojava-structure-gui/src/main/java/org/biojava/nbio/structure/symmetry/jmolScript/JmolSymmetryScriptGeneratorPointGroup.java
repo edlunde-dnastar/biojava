@@ -31,7 +31,6 @@ import org.biojava.nbio.structure.symmetry.geometry.Polyhedron;
 import org.jcolorbrewer.ColorBrewer;
 
 import javax.vecmath.*;
-
 import java.awt.*;
 import java.util.*;
 import java.util.List;

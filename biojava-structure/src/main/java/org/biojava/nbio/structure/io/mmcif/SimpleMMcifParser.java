@@ -37,6 +37,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.lang.reflect.Type;
 import java.util.*;
 
 /**
@@ -993,7 +994,7 @@ public class SimpleMMcifParser implements MMcifParser {
 						throw new NoSuchMethodException("could not find method " + methodName.toString());
 
 					Class<?>[] pType  = m.getParameterTypes();
-					//Type[] gpType = m.getGenericParameterTypes();
+					Type[] gpType = m.getGenericParameterTypes();
 
 					// all of the mmCif container classes have only one argument (they are beans)
 					if ( pType[0].getName().equals(Integer.class.getName())) {

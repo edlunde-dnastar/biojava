@@ -170,8 +170,7 @@ public class GenbankProxySequenceReader<C extends Compound> extends StringProxyS
     public GenericGenbankHeaderParser<AbstractSequence<C>, C> getHeaderParser() {
         return headerParser;
     }
-    @Override
-	public HashMap<String, ArrayList<AbstractFeature>> getFeatures() {
+    public HashMap<String, ArrayList<AbstractFeature>> getFeatures() {
         return features;
     }
 

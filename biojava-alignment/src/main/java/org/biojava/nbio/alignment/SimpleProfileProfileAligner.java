@@ -23,12 +23,8 @@
 
 package org.biojava.nbio.alignment;
 
-import org.biojava.nbio.core.alignment.template.ProfilePair;
-import org.biojava.nbio.core.alignment.template.Profile;
-import org.biojava.nbio.core.alignment.template.SubstitutionMatrix;
-import org.biojava.nbio.core.alignment.SimpleProfilePair;
 import org.biojava.nbio.alignment.template.*;
-import org.biojava.nbio.core.alignment.template.AlignedSequence.Step;
+import org.biojava.nbio.alignment.template.AlignedSequence.Step;
 import org.biojava.nbio.core.sequence.template.Compound;
 import org.biojava.nbio.core.sequence.template.Sequence;
 
