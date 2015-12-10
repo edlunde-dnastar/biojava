@@ -21,7 +21,57 @@
  */
 package org.biojava.nbio.structure.io;
 
-import org.biojava.nbio.structure.*;
+import static java.lang.Math.min;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Locale;
+import java.util.Map;
+import java.util.StringTokenizer;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import javax.vecmath.Matrix4d;
+
+import org.biojava.nbio.structure.AminoAcid;
+import org.biojava.nbio.structure.AminoAcidImpl;
+import org.biojava.nbio.structure.Atom;
+import org.biojava.nbio.structure.AtomImpl;
+import org.biojava.nbio.structure.Author;
+import org.biojava.nbio.structure.Bond;
+import org.biojava.nbio.structure.Chain;
+import org.biojava.nbio.structure.ChainImpl;
+import org.biojava.nbio.structure.Compound;
+import org.biojava.nbio.structure.DBRef;
+import org.biojava.nbio.structure.Element;
+import org.biojava.nbio.structure.Group;
+import org.biojava.nbio.structure.GroupIterator;
+import org.biojava.nbio.structure.GroupType;
+import org.biojava.nbio.structure.HetatomImpl;
+import org.biojava.nbio.structure.JournalArticle;
+import org.biojava.nbio.structure.NucleotideImpl;
+import org.biojava.nbio.structure.PDBCrystallographicInfo;
+import org.biojava.nbio.structure.PDBHeader;
+import org.biojava.nbio.structure.ResidueNumber;
+import org.biojava.nbio.structure.SSBond;
+import org.biojava.nbio.structure.Site;
+import org.biojava.nbio.structure.Structure;
+import org.biojava.nbio.structure.StructureException;
+import org.biojava.nbio.structure.StructureImpl;
+import org.biojava.nbio.structure.StructureTools;
 import org.biojava.nbio.structure.io.mmcif.ChemCompGroupFactory;
 import org.biojava.nbio.structure.io.mmcif.ReducedChemCompProvider;
 import org.biojava.nbio.structure.io.util.PDBTemporaryStorageUtils.LinkRecord;
@@ -30,20 +80,6 @@ import org.biojava.nbio.structure.xtal.SpaceGroup;
 import org.biojava.nbio.structure.xtal.SymoplibParser;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import javax.vecmath.Matrix4d;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.*;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
-import static java.lang.Math.min;
 
 //import org.biojava.nbio.structure.Calc;
 
@@ -2772,7 +2808,9 @@ COLUMNS   DATA TYPE         FIELD          DEFINITION
 			formBonds();
 		}
 
-
+		if (params.shouldCreateLigandConects()){
+					addLigandConnections();
+		}
 
 		if ( params.isParseSecStruc())
 			setSecStruc();
@@ -2780,7 +2818,7 @@ COLUMNS   DATA TYPE         FIELD          DEFINITION
 
 		return structure;
 
-			}
+	}
 
 	/**
 	 * This is the new method for building the COMPND and SOURCE records. Now each method is self-contained.
@@ -2835,6 +2873,12 @@ COLUMNS   DATA TYPE         FIELD          DEFINITION
 
 		BondMaker maker = new BondMaker(structure);
 		maker.makeBonds();
+	}
+	
+	//Builds a list of connections from ligands in a Structure
+	private void addLigandConnections(){
+		LigandConnectMaker maker = new LigandConnectMaker(structure);
+		maker.addLigandConnections();
 	}
 	
 	private void formLinkRecordBond(LinkRecord linkRecord) {

@@ -276,4 +276,14 @@ public class ChemCompConsumer implements MMcifConsumer {
 		
 	}
 
+	@Override
+	public void newStructSiteGen(StructSiteGen gen) {
+		// TODO
+	}
+
+	@Override
+	public void newStructSite(StructSite site) {
+		// TODO
+	}
 }
+

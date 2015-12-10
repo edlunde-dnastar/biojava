@@ -21,26 +21,58 @@
  */
 package org.biojava.nbio.structure.io.mmcif;
 
-import org.biojava.nbio.structure.Structure;
-import org.biojava.nbio.structure.io.MMCIFFileReader;
-import org.biojava.nbio.structure.io.StructureIOFile;
-import org.biojava.nbio.structure.io.mmcif.model.*;
-import org.biojava.nbio.structure.jama.Matrix;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import javax.vecmath.Matrix4d;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+
+import javax.vecmath.Matrix4d;
+
+import org.biojava.nbio.structure.Structure;
+import org.biojava.nbio.structure.io.MMCIFFileReader;
+import org.biojava.nbio.structure.io.StructureIOFile;
+import org.biojava.nbio.structure.io.mmcif.model.AtomSite;
+import org.biojava.nbio.structure.io.mmcif.model.AuditAuthor;
+import org.biojava.nbio.structure.io.mmcif.model.Cell;
+import org.biojava.nbio.structure.io.mmcif.model.ChemComp;
+import org.biojava.nbio.structure.io.mmcif.model.ChemCompAtom;
+import org.biojava.nbio.structure.io.mmcif.model.ChemCompBond;
+import org.biojava.nbio.structure.io.mmcif.model.ChemCompDescriptor;
+import org.biojava.nbio.structure.io.mmcif.model.DatabasePDBremark;
+import org.biojava.nbio.structure.io.mmcif.model.DatabasePDBrev;
+import org.biojava.nbio.structure.io.mmcif.model.Entity;
+import org.biojava.nbio.structure.io.mmcif.model.EntityPolySeq;
+import org.biojava.nbio.structure.io.mmcif.model.EntitySrcGen;
+import org.biojava.nbio.structure.io.mmcif.model.EntitySrcNat;
+import org.biojava.nbio.structure.io.mmcif.model.EntitySrcSyn;
+import org.biojava.nbio.structure.io.mmcif.model.Exptl;
+import org.biojava.nbio.structure.io.mmcif.model.PdbxChemCompDescriptor;
+import org.biojava.nbio.structure.io.mmcif.model.PdbxChemCompIdentifier;
+import org.biojava.nbio.structure.io.mmcif.model.PdbxEntityNonPoly;
+import org.biojava.nbio.structure.io.mmcif.model.PdbxNonPolyScheme;
+import org.biojava.nbio.structure.io.mmcif.model.PdbxPolySeqScheme;
+import org.biojava.nbio.structure.io.mmcif.model.PdbxStructAssembly;
+import org.biojava.nbio.structure.io.mmcif.model.PdbxStructAssemblyGen;
+import org.biojava.nbio.structure.io.mmcif.model.PdbxStructOperList;
+import org.biojava.nbio.structure.io.mmcif.model.Refine;
+import org.biojava.nbio.structure.io.mmcif.model.Struct;
+import org.biojava.nbio.structure.io.mmcif.model.StructAsym;
+import org.biojava.nbio.structure.io.mmcif.model.StructConn;
+import org.biojava.nbio.structure.io.mmcif.model.StructKeywords;
+import org.biojava.nbio.structure.io.mmcif.model.StructNcsOper;
+import org.biojava.nbio.structure.io.mmcif.model.StructRef;
+import org.biojava.nbio.structure.io.mmcif.model.StructRefSeq;
+import org.biojava.nbio.structure.io.mmcif.model.StructSite;
+import org.biojava.nbio.structure.io.mmcif.model.StructSiteGen;
+import org.biojava.nbio.structure.io.mmcif.model.Symmetry;
+import org.biojava.nbio.structure.jama.Matrix;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /** 
  * A simple mmCif file parser
@@ -641,6 +673,18 @@ public class SimpleMMcifParser implements MMcifParser {
 					loopFields,lineData, loopWarnings);
 
 			triggerNewStrucRefSeq(sref);
+		} else if ( category.equals("_struct_site_gen")) {
+			StructSiteGen sref = (StructSiteGen) buildObject(
+					StructSiteGen.class.getName(),
+					loopFields, lineData, loopWarnings);
+			
+			triggerNewStructSiteGen(sref);
+		} else if ( category.equals("_struct_site")) {
+			StructSite sref = (StructSite) buildObject(
+					StructSite.class.getName(),
+					loopFields, lineData, loopWarnings);
+			triggerNewStructSite(sref);
+			
 		} else if ( category.equals("_entity_poly_seq")){
 			EntityPolySeq exptl  = (EntityPolySeq) buildObject(
 					EntityPolySeq.class.getName(),
@@ -1101,6 +1145,12 @@ public class SimpleMMcifParser implements MMcifParser {
 		}
 	}
 
+	private void triggetNewStructSiteGen(StructSiteGen sref) {
+		for (MMcifConsumer c : consumers) {
+			c.newStructSiteGen(sref);
+		}
+	}
+
 	private void triggerNewPdbxPolySeqScheme(PdbxPolySeqScheme ppss){
 		for(MMcifConsumer c : consumers){
 			c.newPdbxPolySeqScheme(ppss);
@@ -1177,6 +1227,16 @@ public class SimpleMMcifParser implements MMcifParser {
 	private void triggerNewStructConn(StructConn id) {
 		for(MMcifConsumer c : consumers){
 			c.newStructConn(id);
+		}
+	}
+	private void triggerNewStructSiteGen(StructSiteGen id) {
+		for (MMcifConsumer c : consumers) {
+			c.newStructSiteGen(id);
+		}
+	}
+	private void triggerNewStructSite(StructSite id) {
+		for (MMcifConsumer c : consumers) {
+			c.newStructSite(id);
 		}
 	}
 }

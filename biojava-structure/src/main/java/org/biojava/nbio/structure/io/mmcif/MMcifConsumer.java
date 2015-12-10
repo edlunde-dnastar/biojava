@@ -21,10 +21,43 @@
  */
 package org.biojava.nbio.structure.io.mmcif;
 
-import org.biojava.nbio.structure.io.FileParsingParameters;
-import org.biojava.nbio.structure.io.mmcif.model.*;
-
 import java.util.List;
+
+import org.biojava.nbio.structure.io.FileParsingParameters;
+import org.biojava.nbio.structure.io.mmcif.model.AtomSite;
+import org.biojava.nbio.structure.io.mmcif.model.AuditAuthor;
+import org.biojava.nbio.structure.io.mmcif.model.Cell;
+import org.biojava.nbio.structure.io.mmcif.model.ChemComp;
+import org.biojava.nbio.structure.io.mmcif.model.ChemCompAtom;
+import org.biojava.nbio.structure.io.mmcif.model.ChemCompBond;
+import org.biojava.nbio.structure.io.mmcif.model.ChemCompDescriptor;
+import org.biojava.nbio.structure.io.mmcif.model.DatabasePDBremark;
+import org.biojava.nbio.structure.io.mmcif.model.DatabasePDBrev;
+import org.biojava.nbio.structure.io.mmcif.model.Entity;
+import org.biojava.nbio.structure.io.mmcif.model.EntityPolySeq;
+import org.biojava.nbio.structure.io.mmcif.model.EntitySrcGen;
+import org.biojava.nbio.structure.io.mmcif.model.EntitySrcNat;
+import org.biojava.nbio.structure.io.mmcif.model.EntitySrcSyn;
+import org.biojava.nbio.structure.io.mmcif.model.Exptl;
+import org.biojava.nbio.structure.io.mmcif.model.PdbxChemCompDescriptor;
+import org.biojava.nbio.structure.io.mmcif.model.PdbxChemCompIdentifier;
+import org.biojava.nbio.structure.io.mmcif.model.PdbxEntityNonPoly;
+import org.biojava.nbio.structure.io.mmcif.model.PdbxNonPolyScheme;
+import org.biojava.nbio.structure.io.mmcif.model.PdbxPolySeqScheme;
+import org.biojava.nbio.structure.io.mmcif.model.PdbxStructAssembly;
+import org.biojava.nbio.structure.io.mmcif.model.PdbxStructAssemblyGen;
+import org.biojava.nbio.structure.io.mmcif.model.PdbxStructOperList;
+import org.biojava.nbio.structure.io.mmcif.model.Refine;
+import org.biojava.nbio.structure.io.mmcif.model.Struct;
+import org.biojava.nbio.structure.io.mmcif.model.StructAsym;
+import org.biojava.nbio.structure.io.mmcif.model.StructConn;
+import org.biojava.nbio.structure.io.mmcif.model.StructKeywords;
+import org.biojava.nbio.structure.io.mmcif.model.StructNcsOper;
+import org.biojava.nbio.structure.io.mmcif.model.StructRef;
+import org.biojava.nbio.structure.io.mmcif.model.StructRefSeq;
+import org.biojava.nbio.structure.io.mmcif.model.StructSite;
+import org.biojava.nbio.structure.io.mmcif.model.StructSiteGen;
+import org.biojava.nbio.structure.io.mmcif.model.Symmetry;
 
 /** An interface for the events triggered by a MMcifParser.
  * The Consumer listens to the events and builds up the protein structure.
@@ -80,6 +113,8 @@ public interface MMcifConsumer {
 	public void newEntitySrcNat(EntitySrcNat entitySrcNat);
 	public void newEntitySrcSyn(EntitySrcSyn entitySrcSyn);
 	public void newStructConn(StructConn structConn);
+	public void newStructSite(StructSite sref);
+	public void newStructSiteGen(StructSiteGen sref);
 	
 	/** AuditAuthor contains the info from the PDB-AUTHOR records.
 	 *
