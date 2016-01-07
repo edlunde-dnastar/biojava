@@ -1620,6 +1620,17 @@ public class SimpleMMcifConsumer implements MMcifConsumer {
 				}
 			}
 		}
+		
+      
+       // May have active model that has not yet been added to the structure.
+       if (null != current_model) {
+               for (Chain c: current_model) {
+                       if (c.getChainID().equals(chainId)) {
+                               chains.add(c);
+                       }
+               }
+       }
+
 
 		return chains;
 	}
@@ -1698,7 +1709,7 @@ public class SimpleMMcifConsumer implements MMcifConsumer {
 		//	return;
 
 		// replace the group asym ids with the real PDB ids!
-		replaceGroupSeqPos(ppss);
+		// replaceGroupSeqPos(ppss);  // This might be incorrect in some pdb, to use auth_seq_id of the pdbx_poly_seq_scheme.
 
 		// merge the EntityPolySeq info and the AtomSite chains into one...
 		//already known ignore:
