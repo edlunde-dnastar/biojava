@@ -9,6 +9,7 @@ import org.biojava.nbio.structure.Atom;
 import org.biojava.nbio.structure.Bond;
 import org.biojava.nbio.structure.Chain;
 import org.biojava.nbio.structure.Group;
+import org.biojava.nbio.structure.HetatomImpl;
 import org.biojava.nbio.structure.Structure;
 import org.biojava.nbio.structure.io.mmcif.ChemCompGroupFactory;
 import org.biojava.nbio.structure.io.mmcif.model.ChemComp;
@@ -38,25 +39,12 @@ public class LigandConnectMaker {
 			List<Group> groups = chain.getAtomLigands();
 
 			for (Group group : groups) {
-				// atoms with no residue number don't have atom information
-				if (group.getResidueNumber() == null) {
-					continue;
-				}
-
-				ChemComp compoundChemComp = ChemCompGroupFactory.getChemComp(group
-						.getPDBName());
-				
-				for (ChemCompBond chemCompBond : compoundChemComp.getBonds()) {
-
-					Atom a = group.getAtom(chemCompBond.getAtom_id_1());
-					Atom b = group.getAtom(chemCompBond.getAtom_id_2());
-
-					if ( a != null && b != null){
-						int bondOrder = chemCompBond.getNumericalBondOrder();
-						bondsToAdd.add(new Bond(a, b, bondOrder));
-					} else  {
-						// Some of the atoms were missing. That's fine, there's
-						// nothing to do in this case.
+				addGroupToBondList(group, bondsToAdd);
+				//Also look for AltLocs to create bonds for alternate conformations if possible.
+				if (group instanceof HetatomImpl ){
+					HetatomImpl hetGroup = (HetatomImpl) group;
+					for (Group altGroup : hetGroup.getAltLocs() ){
+						addGroupToBondList(altGroup, bondsToAdd);
 					}
 				}
 			}
@@ -66,7 +54,29 @@ public class LigandConnectMaker {
 		existingConnections.addAll(newBondMap);
 	}
 	
-	
+	private void addGroupToBondList(Group group, ArrayList<Bond> bondsToAdd){
+		// atoms with no residue number don't have atom information
+		if (group.getResidueNumber() == null) {
+			return;
+		}
+
+		ChemComp compoundChemComp = ChemCompGroupFactory.getChemComp(group
+				.getPDBName());
+		
+		for (ChemCompBond chemCompBond : compoundChemComp.getBonds()) {
+
+			Atom a = group.getAtom(chemCompBond.getAtom_id_1());
+			Atom b = group.getAtom(chemCompBond.getAtom_id_2());
+
+			if ( a != null && b != null){
+				int bondOrder = chemCompBond.getNumericalBondOrder();
+				bondsToAdd.add(new Bond(a, b, bondOrder));
+			} else  {
+				// Some of the atoms were missing. That's fine, there's
+				// nothing to do in this case.
+			}
+		}
+	}
 	/**
 	 * Starting with a list of all the bonds present in a model, create a CONECT record list
 	 * that only includes the ligand connections of atoms present in the final structure.
@@ -182,6 +192,14 @@ public class LigandConnectMaker {
 				List<Atom> atoms = a_group.getAtoms();
 				for (Atom a_atom : atoms) {
 					atom_map.put(a_atom.getPDBserial(), a_group);
+				}
+				
+				//Also consider alternative locations
+				for ( Group a_groupAlt : a_group.getAltLocs()){
+					List<Atom> altAtoms = a_groupAlt.getAtoms();
+					for (Atom a_altAtom : altAtoms) {
+						atom_map.put(a_altAtom.getPDBserial(), a_group);
+					}
 				}
 			}
 		}
