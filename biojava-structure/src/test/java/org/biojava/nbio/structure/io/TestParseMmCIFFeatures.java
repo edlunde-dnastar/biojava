@@ -56,6 +56,7 @@ public class TestParseMmCIFFeatures {
     	return str.toString();
     }
     
+    @Test
     public void testSites() throws IOException, StructureException {
         AtomCache cache = new AtomCache();
         StructureIO.setAtomCache(cache);
