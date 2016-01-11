@@ -39,6 +39,7 @@ import java.util.Map;
 
 import org.biojava.nbio.structure.Chain;
 import org.biojava.nbio.structure.Group;
+import org.biojava.nbio.structure.GroupType;
 import org.biojava.nbio.structure.ResidueNumber;
 import org.biojava.nbio.structure.Structure;
 import org.biojava.nbio.structure.StructureException;
@@ -269,5 +270,46 @@ public class TestDifficultMmCIFFiles {
 		
 		assertNotNull(mapCif);
 
+	}
+
+	@Test
+	public void ligandOnlyChain() throws IOException, StructureException, URISyntaxException {
+		// TODO:
+		// 1. Add mmCIF file to resources with the heme as only residue in a chain
+		// 2. Read this file in with the FileParsingParameter to allow/not
+		// 3. Check for the presence of the heme group - is it there?
+		// See resources/4hhb-ligands.cif
+
+		FileParsingParameters params = new FileParsingParameters();
+		params.setAllowNonPolymericChains(true);
+
+		String filename = "/4hhb-ligands.cif";
+		URL url = getClass().getResource(filename);
+		assumeNotNull("Can't find resource "+filename,url);
+
+		File file = new File(url.toURI());
+		assumeNotNull(file);
+		assumeTrue(file.exists());
+
+		MMCIFFileReader reader = new MMCIFFileReader();
+		reader.setFileParsingParameters(params);
+		Structure s = reader.getStructure(file);
+
+		// Check all the chains are present
+		List<Chain> chains = s.getChains();
+		assertEquals(4, chains.size());
+
+		// Count number hemes
+		int hemes = 0;
+		for (Chain c : chains) {
+			for (Group g : c.getAtomGroups()) {
+				if ("HEM".equals(g.getPDBName())) { 
+					hemes += 1;
+					assertEquals(GroupType.HETATM, g.getType());
+					assertEquals(43, g.getAtoms().size());
+				}
+			}
+		}
+		assertEquals(4, hemes);
 	}
 }

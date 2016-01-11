@@ -790,10 +790,19 @@ public class SimpleMMcifConsumer implements MMcifConsumer {
 				//     empty lists for water-only chains
 				Compound compound = structure.getCompoundById(eId);
 				if (compound==null) {
-					logger.warn("Could not find a compound for entity_id {} corresponding to chain id {} (asym id {})."
-							+ " Most likely it is a purely non-polymeric chain ({} groups). Removing it from this structure.",
-							eId,chain.getChainID(),chain.getInternalChainID(),chain.getAtomGroups().size());
-					it.remove();
+					if (params.allowNonPolymericChains()) {
+						logger.warn("Could not find a compound for entity_id {}, for chain id {}, creating a new compound.",
+								eId, chain.getChainID());
+						compound = new Compound();
+						compound.setId((long)eId);
+						compound.addChain(chain);
+						structure.addCompound(compound);
+					} else {
+						logger.warn("Could not find a compound for entity_id {} corresponding to chain id {} (asym id {})."
+										+ " Most likely it is a purely non-polymeric chain ({} groups). Removing it from this structure.",
+								eId, chain.getChainID(), chain.getInternalChainID(), chain.getAtomGroups().size());
+						it.remove();
+					}
 				} else {
 					logger.debug("Adding chain with chain id {} (asym id {}) to compound with entity_id {}",
 							chain.getChainID(), chain.getInternalChainID(), eId);

@@ -24,11 +24,11 @@
 
 package org.biojava.nbio.structure.io;
 
+import java.io.Serializable;
+
 import org.biojava.nbio.structure.AminoAcid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.io.Serializable;
 
 /** A class that configures parameters that can be sent to the PDB file parsers
  * 
@@ -104,6 +104,7 @@ public class FileParsingParameters implements Serializable
 
 	int atomCaThreshold;
 
+	private boolean m_allowNonPolymericChains;
 
 	/** should we parse the biological assembly information from a file?
 	 * 
@@ -156,6 +157,8 @@ public class FileParsingParameters implements Serializable
 		createAtomBonds = false;
 		
 		createConects = false;
+		
+		m_allowNonPolymericChains = false;
 	}
 
 	/** 
@@ -413,5 +416,24 @@ public class FileParsingParameters implements Serializable
 	public void setCreateLigandConects(boolean createLigandConects){
 		this.createConects = createLigandConects;
 		this.alignSeqRes = true;
+	}
+	
+	/**
+	 * Should non-polymeric ligands be allowed when they have chain ID that doesn't match any polymer chains?
+	 * This will create a new Compound in the Structure for the chain ID.
+	 *
+	 * @param allowNonPolymericChains
+	 *                         true if we should allow non-polymer chains
+	 */
+	public void setAllowNonPolymericChains(boolean allowNonPolymericChains) { this.m_allowNonPolymericChains = allowNonPolymericChains; }
+	
+	/**
+	 * Are non-polymeric chains allowed when parsing?
+	 *
+	 * @return
+	 *                              true if we should allow non-polymer chains
+	 */
+	public boolean allowNonPolymericChains() {
+		return this.m_allowNonPolymericChains;
 	}
 }

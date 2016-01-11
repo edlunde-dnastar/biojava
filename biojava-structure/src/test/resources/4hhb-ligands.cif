@@ -1,0 +1,939 @@
+data_4HHB 
+# 
+loop_
+_entity.id 
+_entity.type 
+_entity.src_method 
+_entity.pdbx_description 
+_entity.formula_weight 
+_entity.pdbx_number_of_molecules 
+_entity.details 
+4 non-polymer syn 'PROTOPORPHYRIN IX CONTAINING FE'  616.498   4   ? 
+# 
+# 
+loop_
+_struct_asym.id 
+_struct_asym.pdbx_blank_PDB_chainid_flag 
+_struct_asym.pdbx_modified 
+_struct_asym.entity_id 
+_struct_asym.details 
+A N N 1 ? 
+B N N 2 ? 
+C N N 1 ? 
+D N N 2 ? 
+E N N 3 ? 
+F N N 3 ? 
+G N N 4 ? 
+H N N 4 ? 
+I N N 4 ? 
+J N N 4 ? 
+K N N 5 ? 
+L N N 5 ? 
+M N N 5 ? 
+N N N 5 ? 
+# 
+loop_
+_atom_site.group_PDB 
+_atom_site.id 
+_atom_site.type_symbol 
+_atom_site.label_atom_id 
+_atom_site.label_alt_id 
+_atom_site.label_comp_id 
+_atom_site.label_asym_id 
+_atom_site.label_entity_id 
+_atom_site.label_seq_id 
+_atom_site.pdbx_PDB_ins_code 
+_atom_site.Cartn_x 
+_atom_site.Cartn_y 
+_atom_site.Cartn_z 
+_atom_site.occupancy 
+_atom_site.B_iso_or_equiv 
+_atom_site.Cartn_x_esd 
+_atom_site.Cartn_y_esd 
+_atom_site.Cartn_z_esd 
+_atom_site.occupancy_esd 
+_atom_site.B_iso_or_equiv_esd 
+_atom_site.pdbx_formal_charge 
+_atom_site.auth_seq_id 
+_atom_site.auth_comp_id 
+_atom_site.auth_asym_id 
+_atom_site.auth_atom_id 
+_atom_site.pdbx_PDB_model_num 
+HETATM 4387 C  CHA . HEM G 4 .   ? 8.585   7.902   -18.282 1.00 16.31 ? ? ? ? ? ? 142 HEM A CHA 1 
+HETATM 4388 C  CHB . HEM G 4 .   ? 10.355  9.805   -14.208 1.00 26.27 ? ? ? ? ? ? 142 HEM A CHB 1 
+HETATM 4389 C  CHC . HEM G 4 .   ? 8.341   6.363   -11.589 1.00 13.23 ? ? ? ? ? ? 142 HEM A CHC 1 
+HETATM 4390 C  CHD . HEM G 4 .   ? 6.988   4.088   -15.744 1.00 14.77 ? ? ? ? ? ? 142 HEM A CHD 1 
+HETATM 4391 C  C1A . HEM G 4 .   ? 9.141   8.725   -17.504 1.00 17.40 ? ? ? ? ? ? 142 HEM A C1A 1 
+HETATM 4392 C  C2A . HEM G 4 .   ? 10.098  9.952   -17.887 1.00 18.53 ? ? ? ? ? ? 142 HEM A C2A 1 
+HETATM 4393 C  C3A . HEM G 4 .   ? 10.636  10.499  -16.796 1.00 18.36 ? ? ? ? ? ? 142 HEM A C3A 1 
+HETATM 4394 C  C4A . HEM G 4 .   ? 10.137  9.679   -15.611 1.00 16.88 ? ? ? ? ? ? 142 HEM A C4A 1 
+HETATM 4395 C  CMA . HEM G 4 .   ? 11.613  11.590  -16.732 1.00 21.20 ? ? ? ? ? ? 142 HEM A CMA 1 
+HETATM 4396 C  CAA . HEM G 4 .   ? 10.403  10.367  -19.312 1.00 25.54 ? ? ? ? ? ? 142 HEM A CAA 1 
+HETATM 4397 C  CBA . HEM G 4 .   ? 9.552   11.270  -19.659 1.00 31.38 ? ? ? ? ? ? 142 HEM A CBA 1 
+HETATM 4398 C  CGA . HEM G 4 .   ? 10.793  12.286  -21.342 1.00 44.82 ? ? ? ? ? ? 142 HEM A CGA 1 
+HETATM 4399 O  O1A . HEM G 4 .   ? 9.887   11.345  -21.943 1.00 39.10 ? ? ? ? ? ? 142 HEM A O1A 1 
+HETATM 4400 O  O2A . HEM G 4 .   ? 9.308   12.698  -21.487 1.00 54.71 ? ? ? ? ? ? 142 HEM A O2A 1 
+HETATM 4401 C  C1B . HEM G 4 .   ? 9.938   9.271   -13.145 1.00 23.63 ? ? ? ? ? ? 142 HEM A C1B 1 
+HETATM 4402 C  C2B . HEM G 4 .   ? 10.318  9.380   -11.838 1.00 11.67 ? ? ? ? ? ? 142 HEM A C2B 1 
+HETATM 4403 C  C3B . HEM G 4 .   ? 9.660   8.341   -11.052 1.00 17.41 ? ? ? ? ? ? 142 HEM A C3B 1 
+HETATM 4404 C  C4B . HEM G 4 .   ? 9.028   7.467   -11.975 1.00 14.84 ? ? ? ? ? ? 142 HEM A C4B 1 
+HETATM 4405 C  CMB . HEM G 4 .   ? 11.048  10.634  -11.389 1.00 12.32 ? ? ? ? ? ? 142 HEM A CMB 1 
+HETATM 4406 C  CAB . HEM G 4 .   ? 9.567   8.336   -9.634  1.00 24.30 ? ? ? ? ? ? 142 HEM A CAB 1 
+HETATM 4407 C  CBB . HEM G 4 .   ? 10.576  8.441   -8.785  1.00 28.40 ? ? ? ? ? ? 142 HEM A CBB 1 
+HETATM 4408 C  C1C . HEM G 4 .   ? 7.680   5.498   -12.499 1.00 13.39 ? ? ? ? ? ? 142 HEM A C1C 1 
+HETATM 4409 C  C2C . HEM G 4 .   ? 7.270   4.198   -12.170 1.00 11.20 ? ? ? ? ? ? 142 HEM A C2C 1 
+HETATM 4410 C  C3C . HEM G 4 .   ? 6.975   3.441   -13.304 1.00 8.94  ? ? ? ? ? ? 142 HEM A C3C 1 
+HETATM 4411 C  C4C . HEM G 4 .   ? 7.207   4.445   -14.517 1.00 10.29 ? ? ? ? ? ? 142 HEM A C4C 1 
+HETATM 4412 C  CMC . HEM G 4 .   ? 7.098   3.618   -10.845 1.00 13.77 ? ? ? ? ? ? 142 HEM A CMC 1 
+HETATM 4413 C  CAC . HEM G 4 .   ? 6.342   2.184   -13.525 1.00 13.45 ? ? ? ? ? ? 142 HEM A CAC 1 
+HETATM 4414 C  CBC . HEM G 4 .   ? 6.722   1.153   -12.766 1.00 11.27 ? ? ? ? ? ? 142 HEM A CBC 1 
+HETATM 4415 C  C1D . HEM G 4 .   ? 7.302   4.989   -16.733 1.00 11.32 ? ? ? ? ? ? 142 HEM A C1D 1 
+HETATM 4416 C  C2D . HEM G 4 .   ? 7.141   4.644   -18.240 1.00 16.69 ? ? ? ? ? ? 142 HEM A C2D 1 
+HETATM 4417 C  C3D . HEM G 4 .   ? 7.540   5.718   -18.887 1.00 20.49 ? ? ? ? ? ? 142 HEM A C3D 1 
+HETATM 4418 C  C4D . HEM G 4 .   ? 8.172   6.582   -18.158 1.00 16.46 ? ? ? ? ? ? 142 HEM A C4D 1 
+HETATM 4419 C  CMD . HEM G 4 .   ? 6.354   3.385   -18.817 1.00 19.45 ? ? ? ? ? ? 142 HEM A CMD 1 
+HETATM 4420 C  CAD . HEM G 4 .   ? 7.621   5.740   -20.408 1.00 21.31 ? ? ? ? ? ? 142 HEM A CAD 1 
+HETATM 4421 C  CBD . HEM G 4 .   ? 8.764   5.354   -20.767 1.00 38.22 ? ? ? ? ? ? 142 HEM A CBD 1 
+HETATM 4422 C  CGD . HEM G 4 .   ? 9.138   5.049   -22.798 1.00 41.21 ? ? ? ? ? ? 142 HEM A CGD 1 
+HETATM 4423 O  O1D . HEM G 4 .   ? 9.998   5.836   -22.703 1.00 42.81 ? ? ? ? ? ? 142 HEM A O1D 1 
+HETATM 4424 O  O2D . HEM G 4 .   ? 8.349   4.920   -23.144 1.00 40.12 ? ? ? ? ? ? 142 HEM A O2D 1 
+HETATM 4425 N  NA  . HEM G 4 .   ? 9.397   8.686   -16.211 1.00 16.46 ? ? ? ? ? ? 142 HEM A NA  1 
+HETATM 4426 N  NB  . HEM G 4 .   ? 9.343   8.012   -13.298 1.00 12.29 ? ? ? ? ? ? 142 HEM A NB  1 
+HETATM 4427 N  NC  . HEM G 4 .   ? 7.604   5.533   -13.949 1.00 15.07 ? ? ? ? ? ? 142 HEM A NC  1 
+HETATM 4428 N  ND  . HEM G 4 .   ? 7.715   6.202   -16.788 1.00 13.07 ? ? ? ? ? ? 142 HEM A ND  1 
+HETATM 4429 FE FE  . HEM G 4 .   ? 8.116   7.403   -15.045 1.00 18.07 ? ? ? ? ? ? 142 HEM A FE  1 
+HETATM 4430 C  CHA . HEM H 4 .   ? 9.659   -10.155 20.773  1.00 21.59 ? ? ? ? ? ? 148 HEM B CHA 1 
+HETATM 4431 C  CHB . HEM H 4 .   ? 11.121  -12.190 16.575  1.00 16.50 ? ? ? ? ? ? 148 HEM B CHB 1 
+HETATM 4432 C  CHC . HEM H 4 .   ? 9.762   -8.175  14.122  1.00 16.82 ? ? ? ? ? ? 148 HEM B CHC 1 
+HETATM 4433 C  CHD . HEM H 4 .   ? 8.223   -6.187  18.294  1.00 16.19 ? ? ? ? ? ? 148 HEM B CHD 1 
+HETATM 4434 C  C1A . HEM H 4 .   ? 10.199  -10.977 19.856  1.00 24.57 ? ? ? ? ? ? 148 HEM B C1A 1 
+HETATM 4435 C  C2A . HEM H 4 .   ? 10.940  -12.186 20.114  1.00 17.10 ? ? ? ? ? ? 148 HEM B C2A 1 
+HETATM 4436 C  C3A . HEM H 4 .   ? 11.529  -12.852 19.028  1.00 13.46 ? ? ? ? ? ? 148 HEM B C3A 1 
+HETATM 4437 C  C4A . HEM H 4 .   ? 10.911  -11.942 17.916  1.00 18.78 ? ? ? ? ? ? 148 HEM B C4A 1 
+HETATM 4438 C  CMA . HEM H 4 .   ? 12.211  -14.084 18.855  1.00 20.21 ? ? ? ? ? ? 148 HEM B CMA 1 
+HETATM 4439 C  CAA . HEM H 4 .   ? 11.171  -12.750 21.554  1.00 21.16 ? ? ? ? ? ? 148 HEM B CAA 1 
+HETATM 4440 C  CBA . HEM H 4 .   ? 10.089  -13.674 21.941  1.00 27.78 ? ? ? ? ? ? 148 HEM B CBA 1 
+HETATM 4441 C  CGA . HEM H 4 .   ? 9.936   -14.643 23.585  1.00 59.12 ? ? ? ? ? ? 148 HEM B CGA 1 
+HETATM 4442 O  O1A . HEM H 4 .   ? 10.040  -13.299 24.151  1.00 44.32 ? ? ? ? ? ? 148 HEM B O1A 1 
+HETATM 4443 O  O2A . HEM H 4 .   ? 9.582   -15.171 23.405  1.00 46.16 ? ? ? ? ? ? 148 HEM B O2A 1 
+HETATM 4444 C  C1B . HEM H 4 .   ? 10.820  -11.284 15.524  1.00 10.36 ? ? ? ? ? ? 148 HEM B C1B 1 
+HETATM 4445 C  C2B . HEM H 4 .   ? 11.247  -11.528 14.048  1.00 7.33  ? ? ? ? ? ? 148 HEM B C2B 1 
+HETATM 4446 C  C3B . HEM H 4 .   ? 10.827  -10.448 13.495  1.00 15.63 ? ? ? ? ? ? 148 HEM B C3B 1 
+HETATM 4447 C  C4B . HEM H 4 .   ? 10.176  -9.458  14.534  1.00 15.33 ? ? ? ? ? ? 148 HEM B C4B 1 
+HETATM 4448 C  CMB . HEM H 4 .   ? 11.793  -12.748 13.802  1.00 14.96 ? ? ? ? ? ? 148 HEM B CMB 1 
+HETATM 4449 C  CAB . HEM H 4 .   ? 10.965  -10.083 11.934  1.00 19.63 ? ? ? ? ? ? 148 HEM B CAB 1 
+HETATM 4450 C  CBB . HEM H 4 .   ? 12.063  -10.466 11.288  1.00 39.39 ? ? ? ? ? ? 148 HEM B CBB 1 
+HETATM 4451 C  C1C . HEM H 4 .   ? 9.223   -7.280  15.193  1.00 14.39 ? ? ? ? ? ? 148 HEM B C1C 1 
+HETATM 4452 C  C2C . HEM H 4 .   ? 8.943   -5.947  14.698  1.00 10.78 ? ? ? ? ? ? 148 HEM B C2C 1 
+HETATM 4453 C  C3C . HEM H 4 .   ? 8.461   -5.188  15.934  1.00 10.68 ? ? ? ? ? ? 148 HEM B C3C 1 
+HETATM 4454 C  C4C . HEM H 4 .   ? 8.575   -6.422  16.809  1.00 8.70  ? ? ? ? ? ? 148 HEM B C4C 1 
+HETATM 4455 C  CMC . HEM H 4 .   ? 9.067   -5.306  13.381  1.00 13.95 ? ? ? ? ? ? 148 HEM B CMC 1 
+HETATM 4456 C  CAC . HEM H 4 .   ? 7.915   -3.899  16.132  1.00 11.87 ? ? ? ? ? ? 148 HEM B CAC 1 
+HETATM 4457 C  CBC . HEM H 4 .   ? 8.359   -2.863  15.599  1.00 12.63 ? ? ? ? ? ? 148 HEM B CBC 1 
+HETATM 4458 C  C1D . HEM H 4 .   ? 8.576   -7.046  19.346  1.00 18.32 ? ? ? ? ? ? 148 HEM B C1D 1 
+HETATM 4459 C  C2D . HEM H 4 .   ? 8.195   -6.791  20.753  1.00 15.48 ? ? ? ? ? ? 148 HEM B C2D 1 
+HETATM 4460 C  C3D . HEM H 4 .   ? 8.512   -8.051  21.256  1.00 14.57 ? ? ? ? ? ? 148 HEM B C3D 1 
+HETATM 4461 C  C4D . HEM H 4 .   ? 9.290   -8.905  20.340  1.00 20.76 ? ? ? ? ? ? 148 HEM B C4D 1 
+HETATM 4462 C  CMD . HEM H 4 .   ? 7.722   -5.449  21.269  1.00 27.50 ? ? ? ? ? ? 148 HEM B CMD 1 
+HETATM 4463 C  CAD . HEM H 4 .   ? 8.696   -7.989  22.865  1.00 13.85 ? ? ? ? ? ? 148 HEM B CAD 1 
+HETATM 4464 C  CBD . HEM H 4 .   ? 10.051  -7.739  23.453  1.00 17.11 ? ? ? ? ? ? 148 HEM B CBD 1 
+HETATM 4465 C  CGD . HEM H 4 .   ? 10.333  -8.222  25.219  1.00 27.09 ? ? ? ? ? ? 148 HEM B CGD 1 
+HETATM 4466 O  O1D . HEM H 4 .   ? 11.372  -7.572  25.386  1.00 27.49 ? ? ? ? ? ? 148 HEM B O1D 1 
+HETATM 4467 O  O2D . HEM H 4 .   ? 9.169   -8.132  25.625  1.00 23.65 ? ? ? ? ? ? 148 HEM B O2D 1 
+HETATM 4468 N  NA  . HEM H 4 .   ? 10.260  -10.823 18.453  1.00 15.64 ? ? ? ? ? ? 148 HEM B NA  1 
+HETATM 4469 N  NB  . HEM H 4 .   ? 10.199  -10.051 15.722  1.00 12.71 ? ? ? ? ? ? 148 HEM B NB  1 
+HETATM 4470 N  NC  . HEM H 4 .   ? 9.104   -7.643  16.544  1.00 11.22 ? ? ? ? ? ? 148 HEM B NC  1 
+HETATM 4471 N  ND  . HEM H 4 .   ? 9.090   -8.239  19.067  1.00 16.72 ? ? ? ? ? ? 148 HEM B ND  1 
+HETATM 4472 FE FE  . HEM H 4 .   ? 9.333   -9.335  17.389  1.00 15.00 ? ? ? ? ? ? 148 HEM B FE  1 
+HETATM 4473 C  CHA . HEM I 4 .   ? -8.630  7.776   18.352  1.00 18.96 ? ? ? ? ? ? 142 HEM C CHA 1 
+HETATM 4474 C  CHB . HEM I 4 .   ? -10.320 10.048  14.384  1.00 20.49 ? ? ? ? ? ? 142 HEM C CHB 1 
+HETATM 4475 C  CHC . HEM I 4 .   ? -8.304  6.446   11.794  1.00 15.25 ? ? ? ? ? ? 142 HEM C CHC 1 
+HETATM 4476 C  CHD . HEM I 4 .   ? -6.900  4.052   15.698  1.00 14.70 ? ? ? ? ? ? 142 HEM C CHD 1 
+HETATM 4477 C  C1A . HEM I 4 .   ? -9.195  8.664   17.417  1.00 16.72 ? ? ? ? ? ? 142 HEM C C1A 1 
+HETATM 4478 C  C2A . HEM I 4 .   ? -10.045 9.791   17.916  1.00 15.73 ? ? ? ? ? ? 142 HEM C C2A 1 
+HETATM 4479 C  C3A . HEM I 4 .   ? -10.613 10.462  16.942  1.00 17.27 ? ? ? ? ? ? 142 HEM C C3A 1 
+HETATM 4480 C  C4A . HEM I 4 .   ? -10.077 9.749   15.710  1.00 12.07 ? ? ? ? ? ? 142 HEM C C4A 1 
+HETATM 4481 C  CMA . HEM I 4 .   ? -11.422 11.658  16.756  1.00 31.88 ? ? ? ? ? ? 142 HEM C CMA 1 
+HETATM 4482 C  CAA . HEM I 4 .   ? -10.321 10.351  19.308  1.00 24.60 ? ? ? ? ? ? 142 HEM C CAA 1 
+HETATM 4483 C  CBA . HEM I 4 .   ? -9.201  11.341  19.696  1.00 36.28 ? ? ? ? ? ? 142 HEM C CBA 1 
+HETATM 4484 C  CGA . HEM I 4 .   ? -10.014 12.024  21.724  1.00 43.70 ? ? ? ? ? ? 142 HEM C CGA 1 
+HETATM 4485 O  O1A . HEM I 4 .   ? -9.511  10.786  22.089  1.00 38.93 ? ? ? ? ? ? 142 HEM C O1A 1 
+HETATM 4486 O  O2A . HEM I 4 .   ? -9.503  12.583  21.415  1.00 46.28 ? ? ? ? ? ? 142 HEM C O2A 1 
+HETATM 4487 C  C1B . HEM I 4 .   ? -9.882  9.419   13.260  1.00 18.45 ? ? ? ? ? ? 142 HEM C C1B 1 
+HETATM 4488 C  C2B . HEM I 4 .   ? -10.342 9.474   11.782  1.00 12.95 ? ? ? ? ? ? 142 HEM C C2B 1 
+HETATM 4489 C  C3B . HEM I 4 .   ? -9.631  8.558   11.160  1.00 12.49 ? ? ? ? ? ? 142 HEM C C3B 1 
+HETATM 4490 C  C4B . HEM I 4 .   ? -8.945  7.665   12.157  1.00 8.33  ? ? ? ? ? ? 142 HEM C C4B 1 
+HETATM 4491 C  CMB . HEM I 4 .   ? -11.015 10.631  11.441  1.00 15.16 ? ? ? ? ? ? 142 HEM C CMB 1 
+HETATM 4492 C  CAB . HEM I 4 .   ? -9.701  8.335   9.552   1.00 21.83 ? ? ? ? ? ? 142 HEM C CAB 1 
+HETATM 4493 C  CBB . HEM I 4 .   ? -10.742 8.875   9.052   1.00 33.11 ? ? ? ? ? ? 142 HEM C CBB 1 
+HETATM 4494 C  C1C . HEM I 4 .   ? -7.751  5.629   12.596  1.00 15.97 ? ? ? ? ? ? 142 HEM C C1C 1 
+HETATM 4495 C  C2C . HEM I 4 .   ? -7.320  4.232   12.130  1.00 9.41  ? ? ? ? ? ? 142 HEM C C2C 1 
+HETATM 4496 C  C3C . HEM I 4 .   ? -6.879  3.543   13.304  1.00 11.73 ? ? ? ? ? ? 142 HEM C C3C 1 
+HETATM 4497 C  C4C . HEM I 4 .   ? -7.009  4.441   14.484  1.00 15.36 ? ? ? ? ? ? 142 HEM C C4C 1 
+HETATM 4498 C  CMC . HEM I 4 .   ? -7.210  3.774   10.722  1.00 13.23 ? ? ? ? ? ? 142 HEM C CMC 1 
+HETATM 4499 C  CAC . HEM I 4 .   ? -6.459  2.233   13.437  1.00 19.55 ? ? ? ? ? ? 142 HEM C CAC 1 
+HETATM 4500 C  CBC . HEM I 4 .   ? -6.761  1.082   12.572  1.00 14.52 ? ? ? ? ? ? 142 HEM C CBC 1 
+HETATM 4501 C  C1D . HEM I 4 .   ? -7.305  4.996   16.751  1.00 11.54 ? ? ? ? ? ? 142 HEM C C1D 1 
+HETATM 4502 C  C2D . HEM I 4 .   ? -6.959  4.620   18.250  1.00 12.94 ? ? ? ? ? ? 142 HEM C C2D 1 
+HETATM 4503 C  C3D . HEM I 4 .   ? -7.527  5.654   18.907  1.00 11.38 ? ? ? ? ? ? 142 HEM C C3D 1 
+HETATM 4504 C  C4D . HEM I 4 .   ? -7.947  6.663   18.081  1.00 11.29 ? ? ? ? ? ? 142 HEM C C4D 1 
+HETATM 4505 C  CMD . HEM I 4 .   ? -6.299  3.375   18.648  1.00 13.29 ? ? ? ? ? ? 142 HEM C CMD 1 
+HETATM 4506 C  CAD . HEM I 4 .   ? -7.594  5.618   20.504  1.00 15.84 ? ? ? ? ? ? 142 HEM C CAD 1 
+HETATM 4507 C  CBD . HEM I 4 .   ? -8.833  5.076   20.877  1.00 21.27 ? ? ? ? ? ? 142 HEM C CBD 1 
+HETATM 4508 C  CGD . HEM I 4 .   ? -9.085  5.314   22.774  1.00 26.94 ? ? ? ? ? ? 142 HEM C CGD 1 
+HETATM 4509 O  O1D . HEM I 4 .   ? -10.036 5.486   22.824  1.00 30.21 ? ? ? ? ? ? 142 HEM C O1D 1 
+HETATM 4510 O  O2D . HEM I 4 .   ? -8.326  4.541   23.113  1.00 25.95 ? ? ? ? ? ? 142 HEM C O2D 1 
+HETATM 4511 N  NA  . HEM I 4 .   ? -9.276  8.702   16.089  1.00 16.55 ? ? ? ? ? ? 142 HEM C NA  1 
+HETATM 4512 N  NB  . HEM I 4 .   ? -9.138  8.185   13.333  1.00 12.79 ? ? ? ? ? ? 142 HEM C NB  1 
+HETATM 4513 N  NC  . HEM I 4 .   ? -7.518  5.627   13.990  1.00 12.28 ? ? ? ? ? ? 142 HEM C NC  1 
+HETATM 4514 N  ND  . HEM I 4 .   ? -7.740  6.303   16.793  1.00 12.30 ? ? ? ? ? ? 142 HEM C ND  1 
+HETATM 4515 FE FE  . HEM I 4 .   ? -8.129  7.348   15.002  1.00 16.89 ? ? ? ? ? ? 142 HEM C FE  1 
+HETATM 4516 C  CHA . HEM J 4 .   ? -9.813  -9.884  -20.599 1.00 19.84 ? ? ? ? ? ? 148 HEM D CHA 1 
+HETATM 4517 C  CHB . HEM J 4 .   ? -11.252 -11.989 -16.610 1.00 16.61 ? ? ? ? ? ? 148 HEM D CHB 1 
+HETATM 4518 C  CHC . HEM J 4 .   ? -9.951  -8.302  -14.119 1.00 13.93 ? ? ? ? ? ? 148 HEM D CHC 1 
+HETATM 4519 C  CHD . HEM J 4 .   ? -8.200  -5.985  -18.127 1.00 15.88 ? ? ? ? ? ? 148 HEM D CHD 1 
+HETATM 4520 C  C1A . HEM J 4 .   ? -10.428 -10.865 -19.783 1.00 28.09 ? ? ? ? ? ? 148 HEM D C1A 1 
+HETATM 4521 C  C2A . HEM J 4 .   ? -11.318 -12.071 -20.258 1.00 22.30 ? ? ? ? ? ? 148 HEM D C2A 1 
+HETATM 4522 C  C3A . HEM J 4 .   ? -11.693 -12.664 -19.188 1.00 22.59 ? ? ? ? ? ? 148 HEM D C3A 1 
+HETATM 4523 C  C4A . HEM J 4 .   ? -11.051 -11.756 -18.004 1.00 25.38 ? ? ? ? ? ? 148 HEM D C4A 1 
+HETATM 4524 C  CMA . HEM J 4 .   ? -12.566 -13.772 -18.973 1.00 20.23 ? ? ? ? ? ? 148 HEM D CMA 1 
+HETATM 4525 C  CAA . HEM J 4 .   ? -11.486 -12.464 -21.884 1.00 19.24 ? ? ? ? ? ? 148 HEM D CAA 1 
+HETATM 4526 C  CBA . HEM J 4 .   ? -10.405 -12.971 -22.194 1.00 50.08 ? ? ? ? ? ? 148 HEM D CBA 1 
+HETATM 4527 C  CGA . HEM J 4 .   ? -9.805  -13.296 -24.484 1.00 47.00 ? ? ? ? ? ? 148 HEM D CGA 1 
+HETATM 4528 O  O1A . HEM J 4 .   ? -11.117 -13.581 -24.158 1.00 49.99 ? ? ? ? ? ? 148 HEM D O1A 1 
+HETATM 4529 O  O2A . HEM J 4 .   ? -9.172  -14.946 -24.346 1.00 55.24 ? ? ? ? ? ? 148 HEM D O2A 1 
+HETATM 4530 C  C1B . HEM J 4 .   ? -10.937 -11.332 -15.462 1.00 14.32 ? ? ? ? ? ? 148 HEM D C1B 1 
+HETATM 4531 C  C2B . HEM J 4 .   ? -11.232 -11.509 -14.176 1.00 15.75 ? ? ? ? ? ? 148 HEM D C2B 1 
+HETATM 4532 C  C3B . HEM J 4 .   ? -10.801 -10.525 -13.479 1.00 14.95 ? ? ? ? ? ? 148 HEM D C3B 1 
+HETATM 4533 C  C4B . HEM J 4 .   ? -10.217 -9.585  -14.421 1.00 12.78 ? ? ? ? ? ? 148 HEM D C4B 1 
+HETATM 4534 C  CMB . HEM J 4 .   ? -11.799 -12.726 -13.757 1.00 18.74 ? ? ? ? ? ? 148 HEM D CMB 1 
+HETATM 4535 C  CAB . HEM J 4 .   ? -10.869 -10.291 -11.895 1.00 16.19 ? ? ? ? ? ? 148 HEM D CAB 1 
+HETATM 4536 C  CBB . HEM J 4 .   ? -11.756 -10.396 -11.494 1.00 34.22 ? ? ? ? ? ? 148 HEM D CBB 1 
+HETATM 4537 C  C1C . HEM J 4 .   ? -9.469  -7.417  -14.891 1.00 14.15 ? ? ? ? ? ? 148 HEM D C1C 1 
+HETATM 4538 C  C2C . HEM J 4 .   ? -8.915  -5.898  -14.609 1.00 16.84 ? ? ? ? ? ? 148 HEM D C2C 1 
+HETATM 4539 C  C3C . HEM J 4 .   ? -8.353  -5.322  -15.741 1.00 13.21 ? ? ? ? ? ? 148 HEM D C3C 1 
+HETATM 4540 C  C4C . HEM J 4 .   ? -8.605  -6.360  -16.751 1.00 15.07 ? ? ? ? ? ? 148 HEM D C4C 1 
+HETATM 4541 C  CMC . HEM J 4 .   ? -9.128  -5.229  -13.166 1.00 18.77 ? ? ? ? ? ? 148 HEM D CMC 1 
+HETATM 4542 C  CAC . HEM J 4 .   ? -7.843  -4.077  -15.916 1.00 13.84 ? ? ? ? ? ? 148 HEM D CAC 1 
+HETATM 4543 C  CBC . HEM J 4 .   ? -8.331  -3.032  -15.408 1.00 20.77 ? ? ? ? ? ? 148 HEM D CBC 1 
+HETATM 4544 C  C1D . HEM J 4 .   ? -8.465  -7.065  -19.281 1.00 18.28 ? ? ? ? ? ? 148 HEM D C1D 1 
+HETATM 4545 C  C2D . HEM J 4 .   ? -8.394  -6.595  -20.574 1.00 20.40 ? ? ? ? ? ? 148 HEM D C2D 1 
+HETATM 4546 C  C3D . HEM J 4 .   ? -8.861  -7.841  -21.341 1.00 19.16 ? ? ? ? ? ? 148 HEM D C3D 1 
+HETATM 4547 C  C4D . HEM J 4 .   ? -9.573  -8.702  -20.531 1.00 19.80 ? ? ? ? ? ? 148 HEM D C4D 1 
+HETATM 4548 C  CMD . HEM J 4 .   ? -7.686  -5.397  -21.106 1.00 25.65 ? ? ? ? ? ? 148 HEM D CMD 1 
+HETATM 4549 C  CAD . HEM J 4 .   ? -8.956  -7.733  -22.890 1.00 23.94 ? ? ? ? ? ? 148 HEM D CAD 1 
+HETATM 4550 C  CBD . HEM J 4 .   ? -10.040 -6.949  -23.304 1.00 45.78 ? ? ? ? ? ? 148 HEM D CBD 1 
+HETATM 4551 C  CGD . HEM J 4 .   ? -10.579 -7.365  -25.200 1.00 48.49 ? ? ? ? ? ? 148 HEM D CGD 1 
+HETATM 4552 O  O1D . HEM J 4 .   ? -9.907  -5.916  -25.395 1.00 40.71 ? ? ? ? ? ? 148 HEM D O1D 1 
+HETATM 4553 O  O2D . HEM J 4 .   ? -9.982  -7.978  -25.490 1.00 45.79 ? ? ? ? ? ? 148 HEM D O2D 1 
+HETATM 4554 N  NA  . HEM J 4 .   ? -10.454 -10.804 -18.459 1.00 15.98 ? ? ? ? ? ? 148 HEM D NA  1 
+HETATM 4555 N  NB  . HEM J 4 .   ? -10.364 -9.999  -15.688 1.00 14.27 ? ? ? ? ? ? 148 HEM D NB  1 
+HETATM 4556 N  NC  . HEM J 4 .   ? -9.228  -7.489  -16.235 1.00 12.21 ? ? ? ? ? ? 148 HEM D NC  1 
+HETATM 4557 N  ND  . HEM J 4 .   ? -9.282  -8.209  -19.162 1.00 12.94 ? ? ? ? ? ? 148 HEM D ND  1 
+HETATM 4558 FE FE  . HEM J 4 .   ? -9.504  -9.265  -17.387 1.00 15.46 ? ? ? ? ? ? 148 HEM D FE  1 
+HETATM 4559 O  O   . HOH K 5 .   ? 27.864  0.667   0.584   1.00 21.15 ? ? ? ? ? ? 143 HOH A O   1 
+HETATM 4560 O  O   . HOH K 5 .   ? 10.459  5.072   -14.201 1.00 29.96 ? ? ? ? ? ? 144 HOH A O   1 
+HETATM 4561 O  O   . HOH K 5 .   ? 17.782  -1.325  -26.109 1.00 23.65 ? ? ? ? ? ? 145 HOH A O   1 
+HETATM 4562 O  O   . HOH K 5 .   ? 13.825  2.114   3.861   1.00 23.17 ? ? ? ? ? ? 146 HOH A O   1 
+HETATM 4563 O  O   . HOH K 5 .   ? 16.741  12.813  9.083   1.00 26.86 ? ? ? ? ? ? 147 HOH A O   1 
+HETATM 4564 O  O   . HOH K 5 .   ? 22.374  9.235   11.515  1.00 30.53 ? ? ? ? ? ? 148 HOH A O   1 
+HETATM 4565 O  O   . HOH K 5 .   ? 25.903  -1.921  -7.245  1.00 27.68 ? ? ? ? ? ? 149 HOH A O   1 
+HETATM 4566 O  O   . HOH K 5 .   ? 11.472  3.167   0.508   1.00 27.27 ? ? ? ? ? ? 150 HOH A O   1 
+HETATM 4567 O  O   . HOH K 5 .   ? 30.661  6.822   -0.101  1.00 29.31 ? ? ? ? ? ? 151 HOH A O   1 
+HETATM 4568 O  O   . HOH K 5 .   ? -3.585  1.717   -5.969  1.00 29.54 ? ? ? ? ? ? 152 HOH A O   1 
+HETATM 4569 O  O   . HOH K 5 .   ? 32.341  10.298  6.014   1.00 35.74 ? ? ? ? ? ? 153 HOH A O   1 
+HETATM 4570 O  O   . HOH K 5 .   ? 34.406  10.442  4.080   1.00 31.58 ? ? ? ? ? ? 154 HOH A O   1 
+HETATM 4571 O  O   . HOH K 5 .   ? 30.017  0.297   -1.177  1.00 37.73 ? ? ? ? ? ? 155 HOH A O   1 
+HETATM 4572 O  O   . HOH K 5 .   ? 21.428  14.396  -13.024 1.00 37.58 ? ? ? ? ? ? 156 HOH A O   1 
+HETATM 4573 O  O   . HOH K 5 .   ? 10.103  6.463   -0.224  1.00 29.83 ? ? ? ? ? ? 157 HOH A O   1 
+HETATM 4574 O  O   . HOH K 5 .   ? 28.011  -0.672  -5.493  1.00 34.75 ? ? ? ? ? ? 158 HOH A O   1 
+HETATM 4575 O  O   . HOH K 5 .   ? 12.221  6.676   -21.742 1.00 35.95 ? ? ? ? ? ? 159 HOH A O   1 
+HETATM 4576 O  O   . HOH K 5 .   ? 0.070   13.369  -11.506 1.00 27.36 ? ? ? ? ? ? 160 HOH A O   1 
+HETATM 4577 O  O   . HOH K 5 .   ? 6.073   -7.542  -8.224  1.00 27.80 ? ? ? ? ? ? 161 HOH A O   1 
+HETATM 4578 O  O   . HOH K 5 .   ? 0.959   -1.910  -19.919 1.00 29.65 ? ? ? ? ? ? 162 HOH A O   1 
+HETATM 4579 O  O   . HOH K 5 .   ? -5.435  9.067   -14.288 1.00 30.27 ? ? ? ? ? ? 163 HOH A O   1 
+HETATM 4580 O  O   . HOH K 5 .   ? 3.108   18.897  -10.351 1.00 37.13 ? ? ? ? ? ? 164 HOH A O   1 
+HETATM 4581 O  O   . HOH K 5 .   ? 9.253   2.690   -0.595  1.00 31.92 ? ? ? ? ? ? 165 HOH A O   1 
+HETATM 4582 O  O   . HOH K 5 .   ? 3.509   1.516   -20.390 1.00 30.86 ? ? ? ? ? ? 166 HOH A O   1 
+HETATM 4583 O  O   . HOH K 5 .   ? 7.323   6.472   -2.528  1.00 34.91 ? ? ? ? ? ? 167 HOH A O   1 
+HETATM 4584 O  O   . HOH K 5 .   ? 8.069   21.100  -2.836  1.00 34.13 ? ? ? ? ? ? 168 HOH A O   1 
+HETATM 4585 O  O   . HOH K 5 .   ? 22.069  5.076   -17.599 1.00 36.10 ? ? ? ? ? ? 169 HOH A O   1 
+HETATM 4586 O  O   . HOH K 5 .   ? 12.511  23.031  -13.238 1.00 37.77 ? ? ? ? ? ? 170 HOH A O   1 
+HETATM 4587 O  O   . HOH K 5 .   ? 27.846  5.439   7.283   1.00 39.01 ? ? ? ? ? ? 171 HOH A O   1 
+HETATM 4588 O  O   . HOH K 5 .   ? 16.593  -6.697  -7.432  1.00 35.74 ? ? ? ? ? ? 172 HOH A O   1 
+HETATM 4589 O  O   . HOH K 5 .   ? 19.969  -3.554  -17.319 1.00 36.03 ? ? ? ? ? ? 173 HOH A O   1 
+HETATM 4590 O  O   . HOH K 5 .   ? 14.440  13.918  -17.292 1.00 34.06 ? ? ? ? ? ? 174 HOH A O   1 
+HETATM 4591 O  O   . HOH K 5 .   ? 30.151  3.417   -5.741  1.00 35.04 ? ? ? ? ? ? 175 HOH A O   1 
+HETATM 4592 O  O   . HOH K 5 .   ? 8.360   5.321   2.557   1.00 38.02 ? ? ? ? ? ? 176 HOH A O   1 
+HETATM 4593 O  O   . HOH K 5 .   ? -6.479  11.748  -17.967 1.00 39.72 ? ? ? ? ? ? 177 HOH A O   1 
+HETATM 4594 O  O   . HOH K 5 .   ? 8.608   18.432  -15.341 1.00 36.40 ? ? ? ? ? ? 178 HOH A O   1 
+HETATM 4595 O  O   . HOH K 5 .   ? 13.827  13.620  8.994   1.00 37.52 ? ? ? ? ? ? 179 HOH A O   1 
+HETATM 4596 O  O   . HOH K 5 .   ? 16.070  12.039  11.262  1.00 38.53 ? ? ? ? ? ? 180 HOH A O   1 
+HETATM 4597 O  O   . HOH K 5 .   ? 2.747   5.937   -4.128  1.00 42.85 ? ? ? ? ? ? 181 HOH A O   1 
+HETATM 4598 O  O   . HOH K 5 .   ? 7.523   20.881  -15.648 1.00 39.27 ? ? ? ? ? ? 182 HOH A O   1 
+HETATM 4599 O  O   . HOH K 5 .   ? 11.712  -10.960 -5.769  1.00 38.61 ? ? ? ? ? ? 183 HOH A O   1 
+HETATM 4600 O  O   . HOH K 5 .   ? 30.119  4.139   -8.587  1.00 34.80 ? ? ? ? ? ? 184 HOH A O   1 
+HETATM 4601 O  O   . HOH K 5 .   ? 25.533  1.205   -11.184 1.00 42.30 ? ? ? ? ? ? 185 HOH A O   1 
+HETATM 4602 O  O   . HOH K 5 .   ? -4.812  12.384  -7.265  1.00 38.29 ? ? ? ? ? ? 186 HOH A O   1 
+HETATM 4603 O  O   . HOH K 5 .   ? 23.809  19.925  1.758   1.00 39.37 ? ? ? ? ? ? 187 HOH A O   1 
+HETATM 4604 O  O   . HOH K 5 .   ? 26.015  11.766  5.159   1.00 40.95 ? ? ? ? ? ? 188 HOH A O   1 
+HETATM 4605 O  O   . HOH K 5 .   ? 14.639  24.823  -4.300  1.00 41.35 ? ? ? ? ? ? 189 HOH A O   1 
+HETATM 4606 O  O   . HOH K 5 .   ? 14.903  5.393   -23.047 1.00 37.45 ? ? ? ? ? ? 190 HOH A O   1 
+HETATM 4607 O  O   . HOH K 5 .   ? 16.650  -5.137  -16.717 1.00 39.12 ? ? ? ? ? ? 191 HOH A O   1 
+HETATM 4608 O  O   . HOH K 5 .   ? 7.424   -6.700  -20.085 1.00 38.62 ? ? ? ? ? ? 192 HOH A O   1 
+HETATM 4609 O  O   . HOH K 5 .   ? 23.120  -3.118  -12.992 1.00 37.05 ? ? ? ? ? ? 193 HOH A O   1 
+HETATM 4610 O  O   . HOH K 5 .   ? 23.664  0.968   -14.389 1.00 36.25 ? ? ? ? ? ? 194 HOH A O   1 
+HETATM 4611 O  O   . HOH K 5 .   ? 25.698  7.981   -15.362 1.00 35.85 ? ? ? ? ? ? 195 HOH A O   1 
+HETATM 4612 O  O   . HOH K 5 .   ? 30.009  16.347  -6.794  1.00 37.62 ? ? ? ? ? ? 196 HOH A O   1 
+HETATM 4613 O  O   . HOH K 5 .   ? 27.728  16.677  -1.376  1.00 42.54 ? ? ? ? ? ? 197 HOH A O   1 
+HETATM 4614 O  O   . HOH K 5 .   ? 8.142   18.836  1.041   1.00 39.90 ? ? ? ? ? ? 198 HOH A O   1 
+HETATM 4615 O  O   . HOH L 5 .   ? 0.093   -2.470  16.222  1.00 21.64 ? ? ? ? ? ? 149 HOH B O   1 
+HETATM 4616 O  O   . HOH L 5 .   ? -5.404  -9.289  14.863  1.00 29.94 ? ? ? ? ? ? 150 HOH B O   1 
+HETATM 4617 O  O   . HOH L 5 .   ? 17.543  -13.863 -8.044  1.00 26.33 ? ? ? ? ? ? 151 HOH B O   1 
+HETATM 4618 O  O   . HOH L 5 .   ? 10.126  -8.396  -0.639  1.00 27.87 ? ? ? ? ? ? 152 HOH B O   1 
+HETATM 4619 O  O   . HOH L 5 .   ? 25.765  -4.888  -7.482  1.00 33.60 ? ? ? ? ? ? 153 HOH B O   1 
+HETATM 4620 O  O   . HOH L 5 .   ? 31.028  -6.924  -0.005  1.00 27.86 ? ? ? ? ? ? 154 HOH B O   1 
+HETATM 4621 O  O   . HOH L 5 .   ? 10.572  -9.505  7.329   1.00 34.89 ? ? ? ? ? ? 155 HOH B O   1 
+HETATM 4622 O  O   . HOH L 5 .   ? 2.908   -19.221 10.523  1.00 29.82 ? ? ? ? ? ? 156 HOH B O   1 
+HETATM 4623 O  O   . HOH L 5 .   ? 27.245  -11.383 -5.263  1.00 34.30 ? ? ? ? ? ? 157 HOH B O   1 
+HETATM 4624 O  O   . HOH L 5 .   ? 5.726   -17.664 4.076   1.00 29.36 ? ? ? ? ? ? 158 HOH B O   1 
+HETATM 4625 O  O   . HOH L 5 .   ? 30.677  -1.382  -3.264  1.00 34.23 ? ? ? ? ? ? 159 HOH B O   1 
+HETATM 4626 O  O   . HOH L 5 .   ? 21.396  -19.202 9.299   1.00 34.06 ? ? ? ? ? ? 160 HOH B O   1 
+HETATM 4627 O  O   . HOH L 5 .   ? 3.400   -4.625  22.878  1.00 34.98 ? ? ? ? ? ? 161 HOH B O   1 
+HETATM 4628 O  O   . HOH L 5 .   ? 23.029  7.858   13.868  1.00 34.02 ? ? ? ? ? ? 162 HOH B O   1 
+HETATM 4629 O  O   . HOH L 5 .   ? 10.054  0.537   2.970   1.00 33.29 ? ? ? ? ? ? 163 HOH B O   1 
+HETATM 4630 O  O   . HOH L 5 .   ? 16.523  -14.815 19.144  1.00 32.12 ? ? ? ? ? ? 164 HOH B O   1 
+HETATM 4631 O  O   . HOH L 5 .   ? -3.521  -7.996  18.788  1.00 35.56 ? ? ? ? ? ? 165 HOH B O   1 
+HETATM 4632 O  O   . HOH L 5 .   ? 9.429   -6.067  3.140   1.00 34.98 ? ? ? ? ? ? 166 HOH B O   1 
+HETATM 4633 O  O   . HOH L 5 .   ? 25.800  -14.208 -2.740  1.00 37.65 ? ? ? ? ? ? 167 HOH B O   1 
+HETATM 4634 O  O   . HOH L 5 .   ? 0.313   -14.430 5.859   1.00 34.45 ? ? ? ? ? ? 168 HOH B O   1 
+HETATM 4635 O  O   . HOH L 5 .   ? 25.879  -15.224 10.033  1.00 33.37 ? ? ? ? ? ? 169 HOH B O   1 
+HETATM 4636 O  O   . HOH L 5 .   ? 35.602  -4.153  -9.289  1.00 35.71 ? ? ? ? ? ? 170 HOH B O   1 
+HETATM 4637 O  O   . HOH L 5 .   ? 20.781  6.254   23.632  1.00 38.68 ? ? ? ? ? ? 171 HOH B O   1 
+HETATM 4638 O  O   . HOH L 5 .   ? 21.800  -18.543 12.994  1.00 40.56 ? ? ? ? ? ? 172 HOH B O   1 
+HETATM 4639 O  O   . HOH L 5 .   ? 7.807   -19.735 16.230  1.00 34.56 ? ? ? ? ? ? 173 HOH B O   1 
+HETATM 4640 O  O   . HOH L 5 .   ? -2.047  -12.487 30.048  1.00 36.28 ? ? ? ? ? ? 174 HOH B O   1 
+HETATM 4641 O  O   . HOH L 5 .   ? 13.681  -7.349  23.790  1.00 31.60 ? ? ? ? ? ? 175 HOH B O   1 
+HETATM 4642 O  O   . HOH L 5 .   ? 24.831  -18.968 5.896   1.00 34.00 ? ? ? ? ? ? 176 HOH B O   1 
+HETATM 4643 O  O   . HOH L 5 .   ? 5.475   -5.297  23.977  1.00 36.71 ? ? ? ? ? ? 177 HOH B O   1 
+HETATM 4644 O  O   . HOH L 5 .   ? 15.904  -5.466  24.689  1.00 34.84 ? ? ? ? ? ? 178 HOH B O   1 
+HETATM 4645 O  O   . HOH L 5 .   ? 22.123  0.182   16.584  1.00 33.20 ? ? ? ? ? ? 179 HOH B O   1 
+HETATM 4646 O  O   . HOH L 5 .   ? 19.207  -15.705 -9.408  1.00 37.19 ? ? ? ? ? ? 180 HOH B O   1 
+HETATM 4647 O  O   . HOH L 5 .   ? 25.174  -12.029 -8.381  1.00 35.87 ? ? ? ? ? ? 181 HOH B O   1 
+HETATM 4648 O  O   . HOH L 5 .   ? -10.362 -13.333 12.465  1.00 36.08 ? ? ? ? ? ? 182 HOH B O   1 
+HETATM 4649 O  O   . HOH L 5 .   ? 12.092  8.997   23.297  1.00 38.22 ? ? ? ? ? ? 183 HOH B O   1 
+HETATM 4650 O  O   . HOH L 5 .   ? 7.727   5.204   22.116  1.00 43.17 ? ? ? ? ? ? 184 HOH B O   1 
+HETATM 4651 O  O   . HOH L 5 .   ? 30.137  -14.006 10.129  1.00 36.03 ? ? ? ? ? ? 185 HOH B O   1 
+HETATM 4652 O  O   . HOH L 5 .   ? 13.730  -18.833 14.202  1.00 39.57 ? ? ? ? ? ? 186 HOH B O   1 
+HETATM 4653 O  O   . HOH L 5 .   ? 22.379  8.870   23.585  1.00 37.45 ? ? ? ? ? ? 187 HOH B O   1 
+HETATM 4654 O  O   . HOH L 5 .   ? -4.205  -14.646 8.671   1.00 38.65 ? ? ? ? ? ? 188 HOH B O   1 
+HETATM 4655 O  O   . HOH L 5 .   ? 12.589  14.261  19.653  1.00 36.93 ? ? ? ? ? ? 189 HOH B O   1 
+HETATM 4656 O  O   . HOH L 5 .   ? 24.652  6.230   17.996  1.00 42.01 ? ? ? ? ? ? 190 HOH B O   1 
+HETATM 4657 O  O   . HOH L 5 .   ? 8.775   -23.438 16.055  1.00 42.33 ? ? ? ? ? ? 191 HOH B O   1 
+HETATM 4658 O  O   . HOH L 5 .   ? -7.480  -10.898 17.998  1.00 38.06 ? ? ? ? ? ? 192 HOH B O   1 
+HETATM 4659 O  O   . HOH L 5 .   ? 11.388  -11.044 24.763  1.00 39.34 ? ? ? ? ? ? 193 HOH B O   1 
+HETATM 4660 O  O   . HOH L 5 .   ? 3.735   -3.643  2.734   1.00 42.17 ? ? ? ? ? ? 194 HOH B O   1 
+HETATM 4661 O  O   . HOH L 5 .   ? 3.149   -0.692  2.083   1.00 41.40 ? ? ? ? ? ? 195 HOH B O   1 
+HETATM 4662 O  O   . HOH L 5 .   ? 4.511   -25.886 13.006  1.00 39.83 ? ? ? ? ? ? 196 HOH B O   1 
+HETATM 4663 O  O   . HOH L 5 .   ? 8.712   -21.655 3.577   1.00 43.08 ? ? ? ? ? ? 197 HOH B O   1 
+HETATM 4664 O  O   . HOH L 5 .   ? 22.926  -4.304  24.079  1.00 38.10 ? ? ? ? ? ? 198 HOH B O   1 
+HETATM 4665 O  O   . HOH L 5 .   ? 11.435  9.654   20.618  1.00 40.23 ? ? ? ? ? ? 199 HOH B O   1 
+HETATM 4666 O  O   . HOH L 5 .   ? 18.099  5.542   27.744  1.00 39.03 ? ? ? ? ? ? 200 HOH B O   1 
+HETATM 4667 O  O   . HOH L 5 .   ? 12.174  9.951   9.804   1.00 44.34 ? ? ? ? ? ? 201 HOH B O   1 
+HETATM 4668 O  O   . HOH L 5 .   ? 24.745  -2.501  15.270  1.00 39.78 ? ? ? ? ? ? 202 HOH B O   1 
+HETATM 4669 O  O   . HOH L 5 .   ? 24.231  0.100   14.764  1.00 42.94 ? ? ? ? ? ? 203 HOH B O   1 
+HETATM 4670 O  O   . HOH L 5 .   ? 23.324  -18.136 10.981  1.00 53.60 ? ? ? ? ? ? 204 HOH B O   1 
+HETATM 4671 O  O   . HOH L 5 .   ? 25.576  -22.211 6.309   1.00 45.18 ? ? ? ? ? ? 205 HOH B O   1 
+HETATM 4672 O  O   . HOH M 5 .   ? -2.661  -3.608  9.261   1.00 21.26 ? ? ? ? ? ? 143 HOH C O   1 
+HETATM 4673 O  O   . HOH M 5 .   ? 0.111   13.200  11.373  1.00 21.54 ? ? ? ? ? ? 144 HOH C O   1 
+HETATM 4674 O  O   . HOH M 5 .   ? -16.704 12.691  -9.201  1.00 23.30 ? ? ? ? ? ? 145 HOH C O   1 
+HETATM 4675 O  O   . HOH M 5 .   ? -13.774 2.466   -4.032  1.00 22.15 ? ? ? ? ? ? 146 HOH C O   1 
+HETATM 4676 O  O   . HOH M 5 .   ? 5.273   9.077   14.193  1.00 28.02 ? ? ? ? ? ? 147 HOH C O   1 
+HETATM 4677 O  O   . HOH M 5 .   ? -11.466 3.494   -0.405  1.00 32.97 ? ? ? ? ? ? 148 HOH C O   1 
+HETATM 4678 O  O   . HOH M 5 .   ? -10.454 4.898   14.327  1.00 33.04 ? ? ? ? ? ? 149 HOH C O   1 
+HETATM 4679 O  O   . HOH M 5 .   ? -7.824  6.701   2.273   1.00 27.40 ? ? ? ? ? ? 150 HOH C O   1 
+HETATM 4680 O  O   . HOH M 5 .   ? -1.248  -1.596  20.098  1.00 29.84 ? ? ? ? ? ? 151 HOH C O   1 
+HETATM 4681 O  O   . HOH M 5 .   ? 2.150   -0.244  14.446  1.00 30.74 ? ? ? ? ? ? 152 HOH C O   1 
+HETATM 4682 O  O   . HOH M 5 .   ? -2.060  18.771  19.773  1.00 29.22 ? ? ? ? ? ? 153 HOH C O   1 
+HETATM 4683 O  O   . HOH M 5 .   ? -21.154 14.002  13.362  1.00 32.40 ? ? ? ? ? ? 154 HOH C O   1 
+HETATM 4684 O  O   . HOH M 5 .   ? -9.105  3.030   0.663   1.00 28.46 ? ? ? ? ? ? 155 HOH C O   1 
+HETATM 4685 O  O   . HOH M 5 .   ? 0.739   12.802  4.676   1.00 38.51 ? ? ? ? ? ? 156 HOH C O   1 
+HETATM 4686 O  O   . HOH M 5 .   ? -8.549  18.107  15.436  1.00 35.20 ? ? ? ? ? ? 157 HOH C O   1 
+HETATM 4687 O  O   . HOH M 5 .   ? -3.358  1.489   20.400  1.00 39.88 ? ? ? ? ? ? 158 HOH C O   1 
+HETATM 4688 O  O   . HOH M 5 .   ? -2.351  -4.643  6.766   1.00 36.39 ? ? ? ? ? ? 159 HOH C O   1 
+HETATM 4689 O  O   . HOH M 5 .   ? -9.995  6.820   0.255   1.00 29.81 ? ? ? ? ? ? 160 HOH C O   1 
+HETATM 4690 O  O   . HOH M 5 .   ? -1.621  21.259  16.530  1.00 33.74 ? ? ? ? ? ? 161 HOH C O   1 
+HETATM 4691 O  O   . HOH M 5 .   ? -5.469  23.850  15.062  1.00 31.03 ? ? ? ? ? ? 162 HOH C O   1 
+HETATM 4692 O  O   . HOH M 5 .   ? 3.572   1.751   6.044   1.00 29.72 ? ? ? ? ? ? 163 HOH C O   1 
+HETATM 4693 O  O   . HOH M 5 .   ? -12.295 6.520   21.611  1.00 31.11 ? ? ? ? ? ? 164 HOH C O   1 
+HETATM 4694 O  O   . HOH M 5 .   ? -14.251 13.845  17.234  1.00 30.77 ? ? ? ? ? ? 165 HOH C O   1 
+HETATM 4695 O  O   . HOH M 5 .   ? -17.414 -5.952  27.962  1.00 34.94 ? ? ? ? ? ? 166 HOH C O   1 
+HETATM 4696 O  O   . HOH M 5 .   ? -3.547  16.435  20.027  1.00 34.58 ? ? ? ? ? ? 167 HOH C O   1 
+HETATM 4697 O  O   . HOH M 5 .   ? -16.355 -6.652  7.174   1.00 37.69 ? ? ? ? ? ? 168 HOH C O   1 
+HETATM 4698 O  O   . HOH M 5 .   ? -7.541  12.855  -2.773  1.00 34.39 ? ? ? ? ? ? 169 HOH C O   1 
+HETATM 4699 O  O   . HOH M 5 .   ? -4.225  9.070   1.455   1.00 35.72 ? ? ? ? ? ? 170 HOH C O   1 
+HETATM 4700 O  O   . HOH M 5 .   ? -25.974 -1.828  7.173   1.00 32.50 ? ? ? ? ? ? 171 HOH C O   1 
+HETATM 4701 O  O   . HOH M 5 .   ? -9.581  -6.364  21.942  1.00 37.91 ? ? ? ? ? ? 172 HOH C O   1 
+HETATM 4702 O  O   . HOH M 5 .   ? -14.874 4.521   23.126  1.00 36.81 ? ? ? ? ? ? 173 HOH C O   1 
+HETATM 4703 O  O   . HOH M 5 .   ? -15.534 20.875  -10.339 1.00 37.83 ? ? ? ? ? ? 174 HOH C O   1 
+HETATM 4704 O  O   . HOH M 5 .   ? -8.242  21.385  2.969   1.00 35.70 ? ? ? ? ? ? 175 HOH C O   1 
+HETATM 4705 O  O   . HOH M 5 .   ? -5.634  24.523  6.954   1.00 37.22 ? ? ? ? ? ? 176 HOH C O   1 
+HETATM 4706 O  O   . HOH M 5 .   ? -22.981 14.501  -8.660  1.00 34.30 ? ? ? ? ? ? 177 HOH C O   1 
+HETATM 4707 O  O   . HOH M 5 .   ? -13.871 16.688  -10.143 1.00 36.92 ? ? ? ? ? ? 178 HOH C O   1 
+HETATM 4708 O  O   . HOH M 5 .   ? -20.275 19.235  8.097   1.00 34.30 ? ? ? ? ? ? 179 HOH C O   1 
+HETATM 4709 O  O   . HOH M 5 .   ? 1.720   15.273  3.670   1.00 39.46 ? ? ? ? ? ? 180 HOH C O   1 
+HETATM 4710 O  O   . HOH M 5 .   ? -2.824  18.993  10.315  1.00 37.49 ? ? ? ? ? ? 181 HOH C O   1 
+HETATM 4711 O  O   . HOH M 5 .   ? -2.160  0.091   22.111  1.00 39.39 ? ? ? ? ? ? 182 HOH C O   1 
+HETATM 4712 O  O   . HOH M 5 .   ? 7.922   12.037  14.216  1.00 34.40 ? ? ? ? ? ? 183 HOH C O   1 
+HETATM 4713 O  O   . HOH M 5 .   ? -2.698  5.986   4.174   1.00 37.01 ? ? ? ? ? ? 184 HOH C O   1 
+HETATM 4714 O  O   . HOH M 5 .   ? 6.321   10.115  3.931   1.00 35.17 ? ? ? ? ? ? 185 HOH C O   1 
+HETATM 4715 O  O   . HOH M 5 .   ? -7.096  21.140  15.539  1.00 35.39 ? ? ? ? ? ? 186 HOH C O   1 
+HETATM 4716 O  O   . HOH M 5 .   ? -10.581 17.364  16.459  1.00 39.95 ? ? ? ? ? ? 187 HOH C O   1 
+HETATM 4717 O  O   . HOH M 5 .   ? -4.668  13.050  -0.747  1.00 39.36 ? ? ? ? ? ? 188 HOH C O   1 
+HETATM 4718 O  O   . HOH M 5 .   ? -4.764  -6.228  5.515   1.00 40.89 ? ? ? ? ? ? 189 HOH C O   1 
+HETATM 4719 O  O   . HOH M 5 .   ? 4.693   12.083  7.558   1.00 40.24 ? ? ? ? ? ? 190 HOH C O   1 
+HETATM 4720 O  O   . HOH M 5 .   ? -4.731  16.453  2.295   1.00 36.37 ? ? ? ? ? ? 191 HOH C O   1 
+HETATM 4721 O  O   . HOH M 5 .   ? -1.055  11.866  -0.448  1.00 43.19 ? ? ? ? ? ? 192 HOH C O   1 
+HETATM 4722 O  O   . HOH M 5 .   ? -18.517 -8.355  15.267  1.00 35.55 ? ? ? ? ? ? 193 HOH C O   1 
+HETATM 4723 O  O   . HOH M 5 .   ? 6.547   9.706   16.296  1.00 41.86 ? ? ? ? ? ? 194 HOH C O   1 
+HETATM 4724 O  O   . HOH M 5 .   ? 0.029   22.606  14.164  1.00 43.02 ? ? ? ? ? ? 195 HOH C O   1 
+HETATM 4725 O  O   . HOH M 5 .   ? -11.367 0.306   28.463  1.00 44.30 ? ? ? ? ? ? 196 HOH C O   1 
+HETATM 4726 O  O   . HOH M 5 .   ? -19.950 -10.635 14.301  1.00 40.17 ? ? ? ? ? ? 197 HOH C O   1 
+HETATM 4727 O  O   . HOH M 5 .   ? -7.047  -6.324  20.098  1.00 36.98 ? ? ? ? ? ? 198 HOH C O   1 
+HETATM 4728 O  O   . HOH M 5 .   ? -23.876 1.108   14.102  1.00 33.31 ? ? ? ? ? ? 199 HOH C O   1 
+HETATM 4729 O  O   . HOH M 5 .   ? -34.199 8.033   11.037  1.00 40.72 ? ? ? ? ? ? 200 HOH C O   1 
+HETATM 4730 O  O   . HOH M 5 .   ? -14.173 13.393  -8.778  1.00 43.21 ? ? ? ? ? ? 201 HOH C O   1 
+HETATM 4731 O  O   . HOH N 5 .   ? 0.061   -2.494  -16.397 1.00 18.64 ? ? ? ? ? ? 149 HOH D O   1 
+HETATM 4732 O  O   . HOH N 5 .   ? -8.041  -19.581 -16.153 1.00 26.28 ? ? ? ? ? ? 150 HOH D O   1 
+HETATM 4733 O  O   . HOH N 5 .   ? 2.825   -3.769  -9.602  1.00 23.08 ? ? ? ? ? ? 151 HOH D O   1 
+HETATM 4734 O  O   . HOH N 5 .   ? -2.494  -0.118  -14.151 1.00 25.33 ? ? ? ? ? ? 152 HOH D O   1 
+HETATM 4735 O  O   . HOH N 5 .   ? -9.792  -8.060  0.750   1.00 30.48 ? ? ? ? ? ? 153 HOH D O   1 
+HETATM 4736 O  O   . HOH N 5 .   ? -6.518  -22.534 -15.665 1.00 34.60 ? ? ? ? ? ? 154 HOH D O   1 
+HETATM 4737 O  O   . HOH N 5 .   ? -17.398 -13.549 8.357   1.00 35.82 ? ? ? ? ? ? 155 HOH D O   1 
+HETATM 4738 O  O   . HOH N 5 .   ? 5.350   -9.378  -15.018 1.00 27.68 ? ? ? ? ? ? 156 HOH D O   1 
+HETATM 4739 O  O   . HOH N 5 .   ? -6.300  -24.347 -19.100 1.00 35.93 ? ? ? ? ? ? 157 HOH D O   1 
+HETATM 4740 O  O   . HOH N 5 .   ? -9.520  7.447   -21.130 1.00 40.04 ? ? ? ? ? ? 158 HOH D O   1 
+HETATM 4741 O  O   . HOH N 5 .   ? -16.425 -5.250  -24.764 1.00 32.57 ? ? ? ? ? ? 159 HOH D O   1 
+HETATM 4742 O  O   . HOH N 5 .   ? -7.987  -14.493 1.146   1.00 34.30 ? ? ? ? ? ? 160 HOH D O   1 
+HETATM 4743 O  O   . HOH N 5 .   ? -3.890  0.572   -11.856 1.00 34.78 ? ? ? ? ? ? 161 HOH D O   1 
+HETATM 4744 O  O   . HOH N 5 .   ? -29.504 -0.198  -4.474  1.00 38.63 ? ? ? ? ? ? 162 HOH D O   1 
+HETATM 4745 O  O   . HOH N 5 .   ? -25.631 -15.732 -9.906  1.00 33.22 ? ? ? ? ? ? 163 HOH D O   1 
+HETATM 4746 O  O   . HOH N 5 .   ? -2.623  -18.453 -21.128 1.00 35.47 ? ? ? ? ? ? 164 HOH D O   1 
+HETATM 4747 O  O   . HOH N 5 .   ? -2.780  -19.130 -10.800 1.00 30.23 ? ? ? ? ? ? 165 HOH D O   1 
+HETATM 4748 O  O   . HOH N 5 .   ? -25.734 -4.456  7.605   1.00 34.33 ? ? ? ? ? ? 166 HOH D O   1 
+HETATM 4749 O  O   . HOH N 5 .   ? -11.771 -10.816 5.496   1.00 38.68 ? ? ? ? ? ? 167 HOH D O   1 
+HETATM 4750 O  O   . HOH N 5 .   ? -9.924  0.291   -2.970  1.00 38.71 ? ? ? ? ? ? 168 HOH D O   1 
+HETATM 4751 O  O   . HOH N 5 .   ? -25.514 -14.066 2.449   1.00 36.60 ? ? ? ? ? ? 169 HOH D O   1 
+HETATM 4752 O  O   . HOH N 5 .   ? -5.455  -17.392 -4.316  1.00 34.43 ? ? ? ? ? ? 170 HOH D O   1 
+HETATM 4753 O  O   . HOH N 5 .   ? 2.688   -11.418 -8.564  1.00 35.73 ? ? ? ? ? ? 171 HOH D O   1 
+HETATM 4754 O  O   . HOH N 5 .   ? 7.091   -10.993 -18.224 1.00 32.39 ? ? ? ? ? ? 172 HOH D O   1 
+HETATM 4755 O  O   . HOH N 5 .   ? -9.377  -6.399  -3.029  1.00 35.44 ? ? ? ? ? ? 173 HOH D O   1 
+HETATM 4756 O  O   . HOH N 5 .   ? -16.565 -17.782 -17.506 1.00 41.02 ? ? ? ? ? ? 174 HOH D O   1 
+HETATM 4757 O  O   . HOH N 5 .   ? -8.141  -3.463  -24.390 1.00 37.14 ? ? ? ? ? ? 175 HOH D O   1 
+HETATM 4758 O  O   . HOH N 5 .   ? -16.560 -15.177 -19.016 1.00 34.89 ? ? ? ? ? ? 176 HOH D O   1 
+HETATM 4759 O  O   . HOH N 5 .   ? 3.477   -8.048  -19.033 1.00 35.94 ? ? ? ? ? ? 177 HOH D O   1 
+HETATM 4760 O  O   . HOH N 5 .   ? -24.698 -11.573 8.724   1.00 38.01 ? ? ? ? ? ? 178 HOH D O   1 
+HETATM 4761 O  O   . HOH N 5 .   ? 2.193   -4.435  -6.557  1.00 38.51 ? ? ? ? ? ? 179 HOH D O   1 
+HETATM 4762 O  O   . HOH N 5 .   ? -29.898 -16.926 -2.135  1.00 36.37 ? ? ? ? ? ? 180 HOH D O   1 
+HETATM 4763 O  O   . HOH N 5 .   ? -7.374  8.034   -17.831 1.00 34.05 ? ? ? ? ? ? 181 HOH D O   1 
+HETATM 4764 O  O   . HOH N 5 .   ? -24.015 0.401   -15.301 1.00 39.14 ? ? ? ? ? ? 182 HOH D O   1 
+HETATM 4765 O  O   . HOH N 5 .   ? -12.141 9.790   -10.238 1.00 38.30 ? ? ? ? ? ? 183 HOH D O   1 
+HETATM 4766 O  O   . HOH N 5 .   ? -5.765  -3.569  -23.682 1.00 36.68 ? ? ? ? ? ? 184 HOH D O   1 
+HETATM 4767 O  O   . HOH N 5 .   ? -4.860  -9.811  -2.967  1.00 37.10 ? ? ? ? ? ? 185 HOH D O   1 
+HETATM 4768 O  O   . HOH N 5 .   ? -23.107 -4.490  -24.359 1.00 37.97 ? ? ? ? ? ? 186 HOH D O   1 
+HETATM 4769 O  O   . HOH N 5 .   ? -10.377 -9.632  -7.043  1.00 38.85 ? ? ? ? ? ? 187 HOH D O   1 
+HETATM 4770 O  O   . HOH N 5 .   ? -7.871  -9.078  2.406   1.00 43.37 ? ? ? ? ? ? 188 HOH D O   1 
+HETATM 4771 O  O   . HOH N 5 .   ? -27.610 -10.991 5.353   1.00 43.46 ? ? ? ? ? ? 189 HOH D O   1 
+HETATM 4772 O  O   . HOH N 5 .   ? -14.034 2.806   -30.367 1.00 41.77 ? ? ? ? ? ? 190 HOH D O   1 
+HETATM 4773 O  O   . HOH N 5 .   ? -32.905 -9.033  0.480   1.00 43.68 ? ? ? ? ? ? 191 HOH D O   1 
+HETATM 4774 O  O   . HOH N 5 .   ? -28.749 -13.315 1.938   1.00 45.36 ? ? ? ? ? ? 192 HOH D O   1 
+HETATM 4775 O  O   . HOH N 5 .   ? 0.516   -8.074  -26.354 1.00 41.53 ? ? ? ? ? ? 193 HOH D O   1 
+HETATM 4776 O  O   . HOH N 5 .   ? -20.080 -9.873  -22.862 1.00 36.25 ? ? ? ? ? ? 194 HOH D O   1 
+HETATM 4777 O  O   . HOH N 5 .   ? -13.442 9.778   -13.572 1.00 39.70 ? ? ? ? ? ? 195 HOH D O   1 
+HETATM 4778 O  O   . HOH N 5 .   ? -24.804 -2.608  -15.488 1.00 37.79 ? ? ? ? ? ? 196 HOH D O   1 
+HETATM 4779 O  O   . HOH N 5 .   ? -1.263  -2.837  -21.251 1.00 45.10 ? ? ? ? ? ? 197 HOH D O   1  
+# 
+loop_
+_pdbx_nonpoly_scheme.asym_id 
+_pdbx_nonpoly_scheme.entity_id 
+_pdbx_nonpoly_scheme.mon_id 
+_pdbx_nonpoly_scheme.ndb_seq_num 
+_pdbx_nonpoly_scheme.pdb_seq_num 
+_pdbx_nonpoly_scheme.auth_seq_num 
+_pdbx_nonpoly_scheme.pdb_mon_id 
+_pdbx_nonpoly_scheme.auth_mon_id 
+_pdbx_nonpoly_scheme.pdb_strand_id 
+_pdbx_nonpoly_scheme.pdb_ins_code 
+G 4 HEM 1  142 1   HEM HEM A . 
+H 4 HEM 1  148 1   HEM HEM B . 
+I 4 HEM 1  142 1   HEM HEM C . 
+J 4 HEM 1  148 1   HEM HEM D . 
+K 5 HOH 1  143 6   HOH HOH A . 
+K 5 HOH 2  144 9   HOH HOH A . 
+K 5 HOH 3  145 12  HOH HOH A . 
+K 5 HOH 4  146 16  HOH HOH A . 
+K 5 HOH 5  147 17  HOH HOH A . 
+K 5 HOH 6  148 21  HOH HOH A . 
+K 5 HOH 7  149 27  HOH HOH A . 
+K 5 HOH 8  150 29  HOH HOH A . 
+K 5 HOH 9  151 30  HOH HOH A . 
+K 5 HOH 10 152 31  HOH HOH A . 
+K 5 HOH 11 153 38  HOH HOH A . 
+K 5 HOH 12 154 39  HOH HOH A . 
+K 5 HOH 13 155 43  HOH HOH A . 
+K 5 HOH 14 156 44  HOH HOH A . 
+K 5 HOH 15 157 51  HOH HOH A . 
+K 5 HOH 16 158 54  HOH HOH A . 
+K 5 HOH 17 159 59  HOH HOH A . 
+K 5 HOH 18 160 62  HOH HOH A . 
+K 5 HOH 19 161 63  HOH HOH A . 
+K 5 HOH 20 162 66  HOH HOH A . 
+K 5 HOH 21 163 67  HOH HOH A . 
+K 5 HOH 22 164 84  HOH HOH A . 
+K 5 HOH 23 165 86  HOH HOH A . 
+K 5 HOH 24 166 88  HOH HOH A . 
+K 5 HOH 25 167 94  HOH HOH A . 
+K 5 HOH 26 168 102 HOH HOH A . 
+K 5 HOH 27 169 104 HOH HOH A . 
+K 5 HOH 28 170 105 HOH HOH A . 
+K 5 HOH 29 171 124 HOH HOH A . 
+K 5 HOH 30 172 129 HOH HOH A . 
+K 5 HOH 31 173 132 HOH HOH A . 
+K 5 HOH 32 174 133 HOH HOH A . 
+K 5 HOH 33 175 136 HOH HOH A . 
+K 5 HOH 34 176 137 HOH HOH A . 
+K 5 HOH 35 177 139 HOH HOH A . 
+K 5 HOH 36 178 146 HOH HOH A . 
+K 5 HOH 37 179 148 HOH HOH A . 
+K 5 HOH 38 180 154 HOH HOH A . 
+K 5 HOH 39 181 155 HOH HOH A . 
+K 5 HOH 40 182 159 HOH HOH A . 
+K 5 HOH 41 183 160 HOH HOH A . 
+K 5 HOH 42 184 166 HOH HOH A . 
+K 5 HOH 43 185 167 HOH HOH A . 
+K 5 HOH 44 186 173 HOH HOH A . 
+K 5 HOH 45 187 175 HOH HOH A . 
+K 5 HOH 46 188 183 HOH HOH A . 
+K 5 HOH 47 189 213 HOH HOH A . 
+K 5 HOH 48 190 214 HOH HOH A . 
+K 5 HOH 49 191 215 HOH HOH A . 
+K 5 HOH 50 192 216 HOH HOH A . 
+K 5 HOH 51 193 218 HOH HOH A . 
+K 5 HOH 52 194 219 HOH HOH A . 
+K 5 HOH 53 195 220 HOH HOH A . 
+K 5 HOH 54 196 221 HOH HOH A . 
+K 5 HOH 55 197 222 HOH HOH A . 
+K 5 HOH 56 198 223 HOH HOH A . 
+L 5 HOH 1  149 8   HOH HOH B . 
+L 5 HOH 2  150 13  HOH HOH B . 
+L 5 HOH 3  151 15  HOH HOH B . 
+L 5 HOH 4  152 20  HOH HOH B . 
+L 5 HOH 5  153 35  HOH HOH B . 
+L 5 HOH 6  154 36  HOH HOH B . 
+L 5 HOH 7  155 37  HOH HOH B . 
+L 5 HOH 8  156 40  HOH HOH B . 
+L 5 HOH 9  157 47  HOH HOH B . 
+L 5 HOH 10 158 49  HOH HOH B . 
+L 5 HOH 11 159 52  HOH HOH B . 
+L 5 HOH 12 160 53  HOH HOH B . 
+L 5 HOH 13 161 56  HOH HOH B . 
+L 5 HOH 14 162 78  HOH HOH B . 
+L 5 HOH 15 163 80  HOH HOH B . 
+L 5 HOH 16 164 81  HOH HOH B . 
+L 5 HOH 17 165 85  HOH HOH B . 
+L 5 HOH 18 166 89  HOH HOH B . 
+L 5 HOH 19 167 90  HOH HOH B . 
+L 5 HOH 20 168 97  HOH HOH B . 
+L 5 HOH 21 169 98  HOH HOH B . 
+L 5 HOH 22 170 101 HOH HOH B . 
+L 5 HOH 23 171 109 HOH HOH B . 
+L 5 HOH 24 172 110 HOH HOH B . 
+L 5 HOH 25 173 113 HOH HOH B . 
+L 5 HOH 26 174 114 HOH HOH B . 
+L 5 HOH 27 175 116 HOH HOH B . 
+L 5 HOH 28 176 123 HOH HOH B . 
+L 5 HOH 29 177 131 HOH HOH B . 
+L 5 HOH 30 178 134 HOH HOH B . 
+L 5 HOH 31 179 141 HOH HOH B . 
+L 5 HOH 32 180 142 HOH HOH B . 
+L 5 HOH 33 181 143 HOH HOH B . 
+L 5 HOH 34 182 144 HOH HOH B . 
+L 5 HOH 35 183 145 HOH HOH B . 
+L 5 HOH 36 184 149 HOH HOH B . 
+L 5 HOH 37 185 153 HOH HOH B . 
+L 5 HOH 38 186 161 HOH HOH B . 
+L 5 HOH 39 187 162 HOH HOH B . 
+L 5 HOH 40 188 165 HOH HOH B . 
+L 5 HOH 41 189 168 HOH HOH B . 
+L 5 HOH 42 190 171 HOH HOH B . 
+L 5 HOH 43 191 178 HOH HOH B . 
+L 5 HOH 44 192 179 HOH HOH B . 
+L 5 HOH 45 193 200 HOH HOH B . 
+L 5 HOH 46 194 201 HOH HOH B . 
+L 5 HOH 47 195 202 HOH HOH B . 
+L 5 HOH 48 196 203 HOH HOH B . 
+L 5 HOH 49 197 204 HOH HOH B . 
+L 5 HOH 50 198 205 HOH HOH B . 
+L 5 HOH 51 199 206 HOH HOH B . 
+L 5 HOH 52 200 207 HOH HOH B . 
+L 5 HOH 53 201 208 HOH HOH B . 
+L 5 HOH 54 202 209 HOH HOH B . 
+L 5 HOH 55 203 210 HOH HOH B . 
+L 5 HOH 56 204 211 HOH HOH B . 
+L 5 HOH 57 205 212 HOH HOH B . 
+M 5 HOH 1  143 4   HOH HOH C . 
+M 5 HOH 2  144 5   HOH HOH C . 
+M 5 HOH 3  145 10  HOH HOH C . 
+M 5 HOH 4  146 14  HOH HOH C . 
+M 5 HOH 5  147 18  HOH HOH C . 
+M 5 HOH 6  148 19  HOH HOH C . 
+M 5 HOH 7  149 22  HOH HOH C . 
+M 5 HOH 8  150 25  HOH HOH C . 
+M 5 HOH 9  151 26  HOH HOH C . 
+M 5 HOH 10 152 28  HOH HOH C . 
+M 5 HOH 11 153 32  HOH HOH C . 
+M 5 HOH 12 154 33  HOH HOH C . 
+M 5 HOH 13 155 41  HOH HOH C . 
+M 5 HOH 14 156 45  HOH HOH C . 
+M 5 HOH 15 157 48  HOH HOH C . 
+M 5 HOH 16 158 55  HOH HOH C . 
+M 5 HOH 17 159 58  HOH HOH C . 
+M 5 HOH 18 160 64  HOH HOH C . 
+M 5 HOH 19 161 68  HOH HOH C . 
+M 5 HOH 20 162 69  HOH HOH C . 
+M 5 HOH 21 163 70  HOH HOH C . 
+M 5 HOH 22 164 71  HOH HOH C . 
+M 5 HOH 23 165 72  HOH HOH C . 
+M 5 HOH 24 166 74  HOH HOH C . 
+M 5 HOH 25 167 79  HOH HOH C . 
+M 5 HOH 26 168 82  HOH HOH C . 
+M 5 HOH 27 169 83  HOH HOH C . 
+M 5 HOH 28 170 91  HOH HOH C . 
+M 5 HOH 29 171 92  HOH HOH C . 
+M 5 HOH 30 172 96  HOH HOH C . 
+M 5 HOH 31 173 108 HOH HOH C . 
+M 5 HOH 32 174 112 HOH HOH C . 
+M 5 HOH 33 175 115 HOH HOH C . 
+M 5 HOH 34 176 119 HOH HOH C . 
+M 5 HOH 35 177 122 HOH HOH C . 
+M 5 HOH 36 178 125 HOH HOH C . 
+M 5 HOH 37 179 126 HOH HOH C . 
+M 5 HOH 38 180 127 HOH HOH C . 
+M 5 HOH 39 181 135 HOH HOH C . 
+M 5 HOH 40 182 140 HOH HOH C . 
+M 5 HOH 41 183 150 HOH HOH C . 
+M 5 HOH 42 184 151 HOH HOH C . 
+M 5 HOH 43 185 152 HOH HOH C . 
+M 5 HOH 44 186 156 HOH HOH C . 
+M 5 HOH 45 187 164 HOH HOH C . 
+M 5 HOH 46 188 172 HOH HOH C . 
+M 5 HOH 47 189 174 HOH HOH C . 
+M 5 HOH 48 190 177 HOH HOH C . 
+M 5 HOH 49 191 180 HOH HOH C . 
+M 5 HOH 50 192 181 HOH HOH C . 
+M 5 HOH 51 193 184 HOH HOH C . 
+M 5 HOH 52 194 192 HOH HOH C . 
+M 5 HOH 53 195 193 HOH HOH C . 
+M 5 HOH 54 196 194 HOH HOH C . 
+M 5 HOH 55 197 195 HOH HOH C . 
+M 5 HOH 56 198 196 HOH HOH C . 
+M 5 HOH 57 199 197 HOH HOH C . 
+M 5 HOH 58 200 198 HOH HOH C . 
+M 5 HOH 59 201 199 HOH HOH C . 
+N 5 HOH 1  149 3   HOH HOH D . 
+N 5 HOH 2  150 7   HOH HOH D . 
+N 5 HOH 3  151 11  HOH HOH D . 
+N 5 HOH 4  152 23  HOH HOH D . 
+N 5 HOH 5  153 24  HOH HOH D . 
+N 5 HOH 6  154 34  HOH HOH D . 
+N 5 HOH 7  155 42  HOH HOH D . 
+N 5 HOH 8  156 46  HOH HOH D . 
+N 5 HOH 9  157 50  HOH HOH D . 
+N 5 HOH 10 158 57  HOH HOH D . 
+N 5 HOH 11 159 60  HOH HOH D . 
+N 5 HOH 12 160 61  HOH HOH D . 
+N 5 HOH 13 161 65  HOH HOH D . 
+N 5 HOH 14 162 73  HOH HOH D . 
+N 5 HOH 15 163 75  HOH HOH D . 
+N 5 HOH 16 164 76  HOH HOH D . 
+N 5 HOH 17 165 77  HOH HOH D . 
+N 5 HOH 18 166 87  HOH HOH D . 
+N 5 HOH 19 167 93  HOH HOH D . 
+N 5 HOH 20 168 95  HOH HOH D . 
+N 5 HOH 21 169 99  HOH HOH D . 
+N 5 HOH 22 170 100 HOH HOH D . 
+N 5 HOH 23 171 103 HOH HOH D . 
+N 5 HOH 24 172 106 HOH HOH D . 
+N 5 HOH 25 173 107 HOH HOH D . 
+N 5 HOH 26 174 111 HOH HOH D . 
+N 5 HOH 27 175 117 HOH HOH D . 
+N 5 HOH 28 176 118 HOH HOH D . 
+N 5 HOH 29 177 120 HOH HOH D . 
+N 5 HOH 30 178 121 HOH HOH D . 
+N 5 HOH 31 179 128 HOH HOH D . 
+N 5 HOH 32 180 130 HOH HOH D . 
+N 5 HOH 33 181 138 HOH HOH D . 
+N 5 HOH 34 182 147 HOH HOH D . 
+N 5 HOH 35 183 157 HOH HOH D . 
+N 5 HOH 36 184 158 HOH HOH D . 
+N 5 HOH 37 185 163 HOH HOH D . 
+N 5 HOH 38 186 169 HOH HOH D . 
+N 5 HOH 39 187 170 HOH HOH D . 
+N 5 HOH 40 188 176 HOH HOH D . 
+N 5 HOH 41 189 182 HOH HOH D . 
+N 5 HOH 42 190 185 HOH HOH D . 
+N 5 HOH 43 191 186 HOH HOH D . 
+N 5 HOH 44 192 187 HOH HOH D . 
+N 5 HOH 45 193 188 HOH HOH D . 
+N 5 HOH 46 194 189 HOH HOH D . 
+N 5 HOH 47 195 190 HOH HOH D . 
+N 5 HOH 48 196 191 HOH HOH D . 
+N 5 HOH 49 197 217 HOH HOH D . 
+# 
+# 
+loop_
+_pdbx_nonpoly_scheme.asym_id 
+_pdbx_nonpoly_scheme.entity_id 
+_pdbx_nonpoly_scheme.mon_id 
+_pdbx_nonpoly_scheme.ndb_seq_num 
+_pdbx_nonpoly_scheme.pdb_seq_num 
+_pdbx_nonpoly_scheme.auth_seq_num 
+_pdbx_nonpoly_scheme.pdb_mon_id 
+_pdbx_nonpoly_scheme.auth_mon_id 
+_pdbx_nonpoly_scheme.pdb_strand_id 
+_pdbx_nonpoly_scheme.pdb_ins_code 
+E 3 PO4 1  147 1   PO4 PO4 D . 
+F 3 PO4 1  147 2   PO4 PO4 B . 
+G 4 HEM 1  142 1   HEM HEM A . 
+H 4 HEM 1  148 1   HEM HEM B . 
+I 4 HEM 1  142 1   HEM HEM C . 
+J 4 HEM 1  148 1   HEM HEM D . 
+K 5 HOH 1  143 6   HOH HOH A . 
+K 5 HOH 2  144 9   HOH HOH A . 
+K 5 HOH 3  145 12  HOH HOH A . 
+K 5 HOH 4  146 16  HOH HOH A . 
+K 5 HOH 5  147 17  HOH HOH A . 
+K 5 HOH 6  148 21  HOH HOH A . 
+K 5 HOH 7  149 27  HOH HOH A . 
+K 5 HOH 8  150 29  HOH HOH A . 
+K 5 HOH 9  151 30  HOH HOH A . 
+K 5 HOH 10 152 31  HOH HOH A . 
+K 5 HOH 11 153 38  HOH HOH A . 
+K 5 HOH 12 154 39  HOH HOH A . 
+K 5 HOH 13 155 43  HOH HOH A . 
+K 5 HOH 14 156 44  HOH HOH A . 
+K 5 HOH 15 157 51  HOH HOH A . 
+K 5 HOH 16 158 54  HOH HOH A . 
+K 5 HOH 17 159 59  HOH HOH A . 
+K 5 HOH 18 160 62  HOH HOH A . 
+K 5 HOH 19 161 63  HOH HOH A . 
+K 5 HOH 20 162 66  HOH HOH A . 
+K 5 HOH 21 163 67  HOH HOH A . 
+K 5 HOH 22 164 84  HOH HOH A . 
+K 5 HOH 23 165 86  HOH HOH A . 
+K 5 HOH 24 166 88  HOH HOH A . 
+K 5 HOH 25 167 94  HOH HOH A . 
+K 5 HOH 26 168 102 HOH HOH A . 
+K 5 HOH 27 169 104 HOH HOH A . 
+K 5 HOH 28 170 105 HOH HOH A . 
+K 5 HOH 29 171 124 HOH HOH A . 
+K 5 HOH 30 172 129 HOH HOH A . 
+K 5 HOH 31 173 132 HOH HOH A . 
+K 5 HOH 32 174 133 HOH HOH A . 
+K 5 HOH 33 175 136 HOH HOH A . 
+K 5 HOH 34 176 137 HOH HOH A . 
+K 5 HOH 35 177 139 HOH HOH A . 
+K 5 HOH 36 178 146 HOH HOH A . 
+K 5 HOH 37 179 148 HOH HOH A . 
+K 5 HOH 38 180 154 HOH HOH A . 
+K 5 HOH 39 181 155 HOH HOH A . 
+K 5 HOH 40 182 159 HOH HOH A . 
+K 5 HOH 41 183 160 HOH HOH A . 
+K 5 HOH 42 184 166 HOH HOH A . 
+K 5 HOH 43 185 167 HOH HOH A . 
+K 5 HOH 44 186 173 HOH HOH A . 
+K 5 HOH 45 187 175 HOH HOH A . 
+K 5 HOH 46 188 183 HOH HOH A . 
+K 5 HOH 47 189 213 HOH HOH A . 
+K 5 HOH 48 190 214 HOH HOH A . 
+K 5 HOH 49 191 215 HOH HOH A . 
+K 5 HOH 50 192 216 HOH HOH A . 
+K 5 HOH 51 193 218 HOH HOH A . 
+K 5 HOH 52 194 219 HOH HOH A . 
+K 5 HOH 53 195 220 HOH HOH A . 
+K 5 HOH 54 196 221 HOH HOH A . 
+K 5 HOH 55 197 222 HOH HOH A . 
+K 5 HOH 56 198 223 HOH HOH A . 
+L 5 HOH 1  149 8   HOH HOH B . 
+L 5 HOH 2  150 13  HOH HOH B . 
+L 5 HOH 3  151 15  HOH HOH B . 
+L 5 HOH 4  152 20  HOH HOH B . 
+L 5 HOH 5  153 35  HOH HOH B . 
+L 5 HOH 6  154 36  HOH HOH B . 
+L 5 HOH 7  155 37  HOH HOH B . 
+L 5 HOH 8  156 40  HOH HOH B . 
+L 5 HOH 9  157 47  HOH HOH B . 
+L 5 HOH 10 158 49  HOH HOH B . 
+L 5 HOH 11 159 52  HOH HOH B . 
+L 5 HOH 12 160 53  HOH HOH B . 
+L 5 HOH 13 161 56  HOH HOH B . 
+L 5 HOH 14 162 78  HOH HOH B . 
+L 5 HOH 15 163 80  HOH HOH B . 
+L 5 HOH 16 164 81  HOH HOH B . 
+L 5 HOH 17 165 85  HOH HOH B . 
+L 5 HOH 18 166 89  HOH HOH B . 
+L 5 HOH 19 167 90  HOH HOH B . 
+L 5 HOH 20 168 97  HOH HOH B . 
+L 5 HOH 21 169 98  HOH HOH B . 
+L 5 HOH 22 170 101 HOH HOH B . 
+L 5 HOH 23 171 109 HOH HOH B . 
+L 5 HOH 24 172 110 HOH HOH B . 
+L 5 HOH 25 173 113 HOH HOH B . 
+L 5 HOH 26 174 114 HOH HOH B . 
+L 5 HOH 27 175 116 HOH HOH B . 
+L 5 HOH 28 176 123 HOH HOH B . 
+L 5 HOH 29 177 131 HOH HOH B . 
+L 5 HOH 30 178 134 HOH HOH B . 
+L 5 HOH 31 179 141 HOH HOH B . 
+L 5 HOH 32 180 142 HOH HOH B . 
+L 5 HOH 33 181 143 HOH HOH B . 
+L 5 HOH 34 182 144 HOH HOH B . 
+L 5 HOH 35 183 145 HOH HOH B . 
+L 5 HOH 36 184 149 HOH HOH B . 
+L 5 HOH 37 185 153 HOH HOH B . 
+L 5 HOH 38 186 161 HOH HOH B . 
+L 5 HOH 39 187 162 HOH HOH B . 
+L 5 HOH 40 188 165 HOH HOH B . 
+L 5 HOH 41 189 168 HOH HOH B . 
+L 5 HOH 42 190 171 HOH HOH B . 
+L 5 HOH 43 191 178 HOH HOH B . 
+L 5 HOH 44 192 179 HOH HOH B . 
+L 5 HOH 45 193 200 HOH HOH B . 
+L 5 HOH 46 194 201 HOH HOH B . 
+L 5 HOH 47 195 202 HOH HOH B . 
+L 5 HOH 48 196 203 HOH HOH B . 
+L 5 HOH 49 197 204 HOH HOH B . 
+L 5 HOH 50 198 205 HOH HOH B . 
+L 5 HOH 51 199 206 HOH HOH B . 
+L 5 HOH 52 200 207 HOH HOH B . 
+L 5 HOH 53 201 208 HOH HOH B . 
+L 5 HOH 54 202 209 HOH HOH B . 
+L 5 HOH 55 203 210 HOH HOH B . 
+L 5 HOH 56 204 211 HOH HOH B . 
+L 5 HOH 57 205 212 HOH HOH B . 
+M 5 HOH 1  143 4   HOH HOH C . 
+M 5 HOH 2  144 5   HOH HOH C . 
+M 5 HOH 3  145 10  HOH HOH C . 
+M 5 HOH 4  146 14  HOH HOH C . 
+M 5 HOH 5  147 18  HOH HOH C . 
+M 5 HOH 6  148 19  HOH HOH C . 
+M 5 HOH 7  149 22  HOH HOH C . 
+M 5 HOH 8  150 25  HOH HOH C . 
+M 5 HOH 9  151 26  HOH HOH C . 
+M 5 HOH 10 152 28  HOH HOH C . 
+M 5 HOH 11 153 32  HOH HOH C . 
+M 5 HOH 12 154 33  HOH HOH C . 
+M 5 HOH 13 155 41  HOH HOH C . 
+M 5 HOH 14 156 45  HOH HOH C . 
+M 5 HOH 15 157 48  HOH HOH C . 
+M 5 HOH 16 158 55  HOH HOH C . 
+M 5 HOH 17 159 58  HOH HOH C . 
+M 5 HOH 18 160 64  HOH HOH C . 
+M 5 HOH 19 161 68  HOH HOH C . 
+M 5 HOH 20 162 69  HOH HOH C . 
+M 5 HOH 21 163 70  HOH HOH C . 
+M 5 HOH 22 164 71  HOH HOH C . 
+M 5 HOH 23 165 72  HOH HOH C . 
+M 5 HOH 24 166 74  HOH HOH C . 
+M 5 HOH 25 167 79  HOH HOH C . 
+M 5 HOH 26 168 82  HOH HOH C . 
+M 5 HOH 27 169 83  HOH HOH C . 
+M 5 HOH 28 170 91  HOH HOH C . 
+M 5 HOH 29 171 92  HOH HOH C . 
+M 5 HOH 30 172 96  HOH HOH C . 
+M 5 HOH 31 173 108 HOH HOH C . 
+M 5 HOH 32 174 112 HOH HOH C . 
+M 5 HOH 33 175 115 HOH HOH C . 
+M 5 HOH 34 176 119 HOH HOH C . 
+M 5 HOH 35 177 122 HOH HOH C . 
+M 5 HOH 36 178 125 HOH HOH C . 
+M 5 HOH 37 179 126 HOH HOH C . 
+M 5 HOH 38 180 127 HOH HOH C . 
+M 5 HOH 39 181 135 HOH HOH C . 
+M 5 HOH 40 182 140 HOH HOH C . 
+M 5 HOH 41 183 150 HOH HOH C . 
+M 5 HOH 42 184 151 HOH HOH C . 
+M 5 HOH 43 185 152 HOH HOH C . 
+M 5 HOH 44 186 156 HOH HOH C . 
+M 5 HOH 45 187 164 HOH HOH C . 
+M 5 HOH 46 188 172 HOH HOH C . 
+M 5 HOH 47 189 174 HOH HOH C . 
+M 5 HOH 48 190 177 HOH HOH C . 
+M 5 HOH 49 191 180 HOH HOH C . 
+M 5 HOH 50 192 181 HOH HOH C . 
+M 5 HOH 51 193 184 HOH HOH C . 
+M 5 HOH 52 194 192 HOH HOH C . 
+M 5 HOH 53 195 193 HOH HOH C . 
+M 5 HOH 54 196 194 HOH HOH C . 
+M 5 HOH 55 197 195 HOH HOH C . 
+M 5 HOH 56 198 196 HOH HOH C . 
+M 5 HOH 57 199 197 HOH HOH C . 
+M 5 HOH 58 200 198 HOH HOH C . 
+M 5 HOH 59 201 199 HOH HOH C . 
+N 5 HOH 1  149 3   HOH HOH D . 
+N 5 HOH 2  150 7   HOH HOH D . 
+N 5 HOH 3  151 11  HOH HOH D . 
+N 5 HOH 4  152 23  HOH HOH D . 
+N 5 HOH 5  153 24  HOH HOH D . 
+N 5 HOH 6  154 34  HOH HOH D . 
+N 5 HOH 7  155 42  HOH HOH D . 
+N 5 HOH 8  156 46  HOH HOH D . 
+N 5 HOH 9  157 50  HOH HOH D . 
+N 5 HOH 10 158 57  HOH HOH D . 
+N 5 HOH 11 159 60  HOH HOH D . 
+N 5 HOH 12 160 61  HOH HOH D . 
+N 5 HOH 13 161 65  HOH HOH D . 
+N 5 HOH 14 162 73  HOH HOH D . 
+N 5 HOH 15 163 75  HOH HOH D . 
+N 5 HOH 16 164 76  HOH HOH D . 
+N 5 HOH 17 165 77  HOH HOH D . 
+N 5 HOH 18 166 87  HOH HOH D . 
+N 5 HOH 19 167 93  HOH HOH D . 
+N 5 HOH 20 168 95  HOH HOH D . 
+N 5 HOH 21 169 99  HOH HOH D . 
+N 5 HOH 22 170 100 HOH HOH D . 
+N 5 HOH 23 171 103 HOH HOH D . 
+N 5 HOH 24 172 106 HOH HOH D . 
+N 5 HOH 25 173 107 HOH HOH D . 
+N 5 HOH 26 174 111 HOH HOH D . 
+N 5 HOH 27 175 117 HOH HOH D . 
+N 5 HOH 28 176 118 HOH HOH D . 
+N 5 HOH 29 177 120 HOH HOH D . 
+N 5 HOH 30 178 121 HOH HOH D . 
+N 5 HOH 31 179 128 HOH HOH D . 
+N 5 HOH 32 180 130 HOH HOH D . 
+N 5 HOH 33 181 138 HOH HOH D . 
+N 5 HOH 34 182 147 HOH HOH D . 
+N 5 HOH 35 183 157 HOH HOH D . 
+N 5 HOH 36 184 158 HOH HOH D . 
+N 5 HOH 37 185 163 HOH HOH D . 
+N 5 HOH 38 186 169 HOH HOH D . 
+N 5 HOH 39 187 170 HOH HOH D . 
+N 5 HOH 40 188 176 HOH HOH D . 
+N 5 HOH 41 189 182 HOH HOH D . 
+N 5 HOH 42 190 185 HOH HOH D . 
+N 5 HOH 43 191 186 HOH HOH D . 
+N 5 HOH 44 192 187 HOH HOH D . 
+N 5 HOH 45 193 188 HOH HOH D . 
+N 5 HOH 46 194 189 HOH HOH D . 
+N 5 HOH 47 195 190 HOH HOH D . 
+N 5 HOH 48 196 191 HOH HOH D . 
+N 5 HOH 49 197 217 HOH HOH D . 
+# 
+loop_
+_pdbx_entity_nonpoly.entity_id 
+_pdbx_entity_nonpoly.name 
+_pdbx_entity_nonpoly.comp_id 
+4 'PROTOPORPHYRIN IX CONTAINING FE' HEM
+5 water                             HOH
+# 
