@@ -20,13 +20,12 @@
  */
 package org.biojava.nbio.structure.io;
 
-import org.biojava.nbio.structure.*;
-import org.biojava.nbio.structure.align.util.AtomCache;
-import org.biojava.nbio.structure.io.mmcif.MMcifParser;
-import org.biojava.nbio.structure.io.mmcif.SimpleMMcifConsumer;
-import org.biojava.nbio.structure.io.mmcif.SimpleMMcifParser;
-import org.biojava.nbio.structure.quaternary.BioAssemblyInfo;
-import org.junit.Test;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assume.assumeNotNull;
+import static org.junit.Assume.assumeTrue;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -38,9 +37,20 @@ import java.net.URL;
 import java.util.List;
 import java.util.Map;
 
-import static org.junit.Assert.*;
-import static org.junit.Assume.assumeNotNull;
-import static org.junit.Assume.assumeTrue;
+import org.biojava.nbio.structure.Chain;
+import org.biojava.nbio.structure.Group;
+import org.biojava.nbio.structure.GroupType;
+import org.biojava.nbio.structure.ResidueNumber;
+import org.biojava.nbio.structure.Structure;
+import org.biojava.nbio.structure.StructureException;
+import org.biojava.nbio.structure.StructureIO;
+import org.biojava.nbio.structure.align.util.AtomCache;
+import org.biojava.nbio.structure.io.mmcif.MMcifParser;
+import org.biojava.nbio.structure.io.mmcif.SimpleMMcifConsumer;
+import org.biojava.nbio.structure.io.mmcif.SimpleMMcifParser;
+import org.biojava.nbio.structure.quaternary.BioAssemblyInfo;
+import org.junit.Assert;
+import org.junit.Test;
 
 /**
  * Testing parsing of some difficult mmCIF files. 
@@ -229,5 +239,46 @@ public class TestDifficultMmCIFFiles {
 		
 		assertNotNull(mapCif);
 
+	}
+
+	@Test
+	public void ligandOnlyChain() throws IOException, StructureException, URISyntaxException {
+		// TODO:
+		// 1. Add mmCIF file to resources with the heme as only residue in a chain
+		// 2. Read this file in with the FileParsingParameter to allow/not
+		// 3. Check for the presence of the heme group - is it there?
+		// See resources/4hhb-ligands.cif
+
+		FileParsingParameters params = new FileParsingParameters();
+		params.setAllowNonPolymericChains(true);
+
+		String filename = "/4hhb-ligands.cif";
+		URL url = getClass().getResource(filename);
+		assumeNotNull("Can't find resource "+filename,url);
+
+		File file = new File(url.toURI());
+		assumeNotNull(file);
+		assumeTrue(file.exists());
+
+		MMCIFFileReader reader = new MMCIFFileReader();
+		reader.setFileParsingParameters(params);
+		Structure s = reader.getStructure(file);
+
+		// Check all the chains are present
+		List<Chain> chains = s.getChains();
+		Assert.assertEquals(4, chains.size());
+
+		// Count number hemes
+		int hemes = 0;
+		for (Chain c : chains) {
+			for (Group g : c.getAtomGroups()) {
+				if ("HEM".equals(g.getPDBName())) { 
+					hemes += 1;
+					Assert.assertEquals(GroupType.HETATM, g.getType());
+					Assert.assertEquals(43, g.getAtoms().size());
+				}
+			}
+		}
+		Assert.assertEquals(4, hemes);
 	}
 }
