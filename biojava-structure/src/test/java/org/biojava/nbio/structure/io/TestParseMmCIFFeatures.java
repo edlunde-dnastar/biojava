@@ -44,6 +44,27 @@ public class TestParseMmCIFFeatures {
         assertEquals("B487-B497", printBond(bonds.get(5)));
     }
     
+    @Test
+    public void testSiteWithInsCode()throws IOException, StructureException {
+        AtomCache cache = new AtomCache();
+
+        StructureIO.setAtomCache(cache);
+
+        cache.setUseMmCif(true);
+        Structure sCif = StructureIO.getStructure("1A4W");
+
+        assertNotNull(sCif);
+
+        // After it has read the file, it should check that expected SITES are present.
+        List<Site> sites = sCif.getSites();
+
+        // 1A4W has 5 sites from ligands.
+        assertEquals(5, sites.size());
+
+        // Check for each site that it has parsed all residues.
+        assertEquals(6, getGroupsInSite(sCif, "AC1"));  // AC1 references an insertion code.
+    }
+    
     String printBond(SSBond bond) {
     	StringBuilder str = new StringBuilder();
     	
