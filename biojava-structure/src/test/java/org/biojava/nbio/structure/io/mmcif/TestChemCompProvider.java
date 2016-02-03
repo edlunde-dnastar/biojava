@@ -5,8 +5,6 @@ import static org.junit.Assert.assertEquals;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 
 import org.biojava.nbio.structure.Structure;
 import org.biojava.nbio.structure.align.util.UserConfiguration;
@@ -96,12 +94,13 @@ public class TestChemCompProvider {
 		String cachePath = config.getCacheFilePath();
 		
 		// Setup a ChemCompProvider
-		Path pdbdir = Paths.get(cachePath);
-		Path chemComp = pdbdir.resolve("chemcomp.zip");
-		
-		System.out.println("Using PDB_DIR=" + pdbdir.toString() + " as temporary file directory");
-		
-		ChemCompGroupFactory.setChemCompProvider(new ZipChemCompProvider(chemComp.toString(), pdbdir.toString()));
+		//Path pdbdir = Paths.get(cachePath);
+		//Path chemComp = pdbdir.resolve("chemcomp.zip");
+		// System.out.println("Using PDB_DIR=" + pdbdir.toString() + " as temporary file directory");
+		//ChemCompGroupFactory.setChemCompProvider(new ZipChemCompProvider(chemComp.toString(), cachePath));
+		String separator = System.getProperty("line.separator");
+		String chemcomp = cachePath + separator + "chemcomp.zip";
+		ChemCompGroupFactory.setChemCompProvider(new ZipChemCompProvider(chemcomp, cachePath));
 		
 		// Parameters
 		FileParsingParameters params = new FileParsingParameters();
