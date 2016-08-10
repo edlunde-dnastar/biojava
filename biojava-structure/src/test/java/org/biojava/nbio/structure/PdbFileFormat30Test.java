@@ -23,13 +23,15 @@
 
 package org.biojava.nbio.structure;
 
-import junit.framework.TestCase;
-import org.biojava.nbio.structure.io.FileParsingParameters;
-import org.biojava.nbio.structure.io.PDBFileParser;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
+
+import org.biojava.nbio.structure.io.FileParsingParameters;
+import org.biojava.nbio.structure.io.PDBFileParser;
+import org.junit.Test;
+
+import junit.framework.TestCase;
 
 
 public class PdbFileFormat30Test extends TestCase {
@@ -87,6 +89,12 @@ public class PdbFileFormat30Test extends TestCase {
 		Compound mol = compounds.get(0);
 		
 		assertTrue(mol.getMolName().startsWith("DNA"));
+	}
+	
+	@Test
+	public void testShortLinedPDB() throws IOException {
+		// Fails if < 80 character lines are not well handled.
+		Structure s = getStructure("/1F6M_r_u.pdb");
 	}
 	
 	private Structure getStructure(String fileName){

@@ -2746,6 +2746,7 @@ COLUMNS   DATA TYPE         FIELD          DEFINITION
 			}
 
 			String recordName = line.substring (0, 6).trim ();
+			line = padRight(line, 80);
 
 			if (recordName.equals("ATOM"))
 				pdb_ATOM_Handler(line);
@@ -2820,6 +2821,10 @@ COLUMNS   DATA TYPE         FIELD          DEFINITION
 
 	}
 
+	public static String padRight(String s, int n) {
+	     return String.format("%1$-" + n + "s", s);  
+	}
+	
 	/**
 	 * This is the new method for building the COMPND and SOURCE records. Now each method is self-contained.
 	 * @author Jules Jacobsen
