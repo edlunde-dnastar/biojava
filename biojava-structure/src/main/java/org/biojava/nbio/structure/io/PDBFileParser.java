@@ -1970,8 +1970,13 @@ COLUMNS   DATA TYPE         FIELD          DEFINITION
 		// missing (i.e. misformatted PDB file), then parse the
 		// name from the atom name.
 		Element element = Element.R;
+		String elementStr = "";
 		if ( line.length() > 77 ) {
 			// parse element from element field
+			elementStr = line.substring (76, 78).trim();
+		}
+		
+		if (!"".equals(elementStr)) {
 			try {
 				element = Element.valueOfIgnoreCase(line.substring (76, 78).trim());
 			}  catch (IllegalArgumentException e){}
