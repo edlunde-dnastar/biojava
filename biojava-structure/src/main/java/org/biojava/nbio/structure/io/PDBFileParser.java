@@ -3064,7 +3064,13 @@ COLUMNS   DATA TYPE         FIELD          DEFINITION
 		
 		// to make sure we have Compounds linked to chains, we call getCompounds() which will lazily initialise the
 		// compounds using heuristics (see CompoundFinder) in the case that they were not explicitly present in the file
-		structure.getCompounds();
+		
+		
+		try {
+			structure.getCompounds();
+		} catch (Exception e) {
+			logger.warn("Unable to link chains to compounds");
+		}
 	}
 
 

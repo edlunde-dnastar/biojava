@@ -20,6 +20,18 @@
  */
 package org.biojava.nbio.structure.io;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.zip.GZIPInputStream;
+
 import org.biojava.nbio.structure.Chain;
 import org.biojava.nbio.structure.Structure;
 import org.biojava.nbio.structure.StructureException;
@@ -30,14 +42,6 @@ import org.biojava.nbio.structure.io.mmcif.SimpleMMcifConsumer;
 import org.biojava.nbio.structure.io.mmcif.SimpleMMcifParser;
 import org.biojava.nbio.structure.xtal.CrystalCell;
 import org.junit.Test;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.util.zip.GZIPInputStream;
-
-import static org.junit.Assert.*;
 
 /**
  * Tests for non-deposited PDB/mmCIF files, i.e. any kind of "raw" file
@@ -50,6 +54,24 @@ import static org.junit.Assert.*;
  *
  */
 public class TestNonDepositedFiles {
+	
+    @Test
+    public void test1E4K() throws IOException, StructureException {
+            InputStream inStream = this.getClass().getResourceAsStream("/org/biojava/nbio/structure/io/1E4K_r_u.pdb");
+            assertNotNull(inStream);
+
+            PDBFileParser pdbpars = new PDBFileParser();
+            FileParsingParameters params = new FileParsingParameters();
+            params.setAlignSeqRes(true);
+            pdbpars.setFileParsingParameters(params);
+
+            Structure s = pdbpars.parsePDBFile(inStream) ;
+
+            int numChains = s.getChains().size();
+
+            assertNotNull(s);
+    }
+
 
 	@Test
 	public void test1B8GnoSeqresPdb() throws IOException, StructureException {
