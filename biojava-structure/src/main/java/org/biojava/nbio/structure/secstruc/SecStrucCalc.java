@@ -20,14 +20,6 @@
  */
 package org.biojava.nbio.structure.secstruc;
 
-import org.biojava.nbio.structure.*;
-import org.biojava.nbio.structure.contact.AtomContact;
-import org.biojava.nbio.structure.contact.AtomContactSet;
-import org.biojava.nbio.structure.contact.Grid;
-import org.biojava.nbio.structure.contact.Pair;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -35,6 +27,21 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+
+import org.biojava.nbio.structure.Atom;
+import org.biojava.nbio.structure.Calc;
+import org.biojava.nbio.structure.Chain;
+import org.biojava.nbio.structure.Group;
+import org.biojava.nbio.structure.ResidueNumber;
+import org.biojava.nbio.structure.Structure;
+import org.biojava.nbio.structure.StructureException;
+import org.biojava.nbio.structure.StructureTools;
+import org.biojava.nbio.structure.contact.AtomContact;
+import org.biojava.nbio.structure.contact.AtomContactSet;
+import org.biojava.nbio.structure.contact.Grid;
+import org.biojava.nbio.structure.contact.Pair;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Calculate and assign the secondary structure (SS) to the
@@ -100,7 +107,7 @@ public class SecStrucCalc {
 	private Atom[] atoms;
 	// Added by Anthony - to speed up intergroup calculations
 	private AtomContactSet contactSet;
-	private Map<String, Integer> indResMap;
+	private Map<ResidueNumber, Integer> indResMap;
 	public SecStrucCalc(){
 		ladders = new ArrayList<Ladder>();
 		bridges = new ArrayList<BetaBridge>();
@@ -157,10 +164,10 @@ public class SecStrucCalc {
 		// Initialise an array of atoms
 		atoms = new Atom[groups.length];
 		// Remake this local var
-		indResMap = new HashMap<String, Integer>();
+		indResMap = new HashMap<>();
 		for (int i=0 ; i < groups.length ; i++){
 			SecStrucGroup one = groups[i];
-			indResMap.put(one.getResidueNumber().getChainId()+one.getResidueNumber().getSeqNum(), i);
+			indResMap.put(one.getResidueNumber(), i);
 			atoms[i] = one.getCA();
 		}
 		Grid grid = new Grid(CA_MIN_DIST);
@@ -429,8 +436,8 @@ public class SecStrucCalc {
 			Group g1 = ac.getPair().getFirst().getGroup();
 			Group g2 = ac.getPair().getSecond().getGroup();
 			// Get the indices
-			int i = indResMap.get(g1.getResidueNumber().getChainId()+g1.getResidueNumber().getSeqNum());
-			int j = indResMap.get(g2.getResidueNumber().getChainId()+g2.getResidueNumber().getSeqNum());
+			int i = indResMap.get(g1.getResidueNumber());
+			int j = indResMap.get(g2.getResidueNumber());
 			// If i>j switch them over
 			if(i>j){
 				// Switch them over
@@ -772,8 +779,8 @@ public class SecStrucCalc {
 			Group g1 = pair.getFirst().getGroup();
 			Group g2 = pair.getSecond().getGroup();
 			// Now I need to get the index of the Group in the list groups
-			int i = indResMap.get(g1.getResidueNumber().getChainId()+g1.getResidueNumber().getSeqNum());
-			int j = indResMap.get(g2.getResidueNumber().getChainId()+g2.getResidueNumber().getSeqNum());
+			int i = indResMap.get(g1.getResidueNumber());
+			int j = indResMap.get(g2.getResidueNumber());
 			// Now check this
 			checkAddHBond(i,j);
 			//"backwards" hbonds are not allowed
