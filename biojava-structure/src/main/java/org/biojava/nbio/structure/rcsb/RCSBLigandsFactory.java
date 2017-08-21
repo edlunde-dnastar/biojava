@@ -19,9 +19,6 @@
  */
 package org.biojava.nbio.structure.rcsb;
 
-import org.w3c.dom.Element;
-import org.w3c.dom.NodeList;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
@@ -29,6 +26,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import org.w3c.dom.Element;
+import org.w3c.dom.NodeList;
 
 /**
  * Fetches information from <a href="http://www.pdb.org/pdb/software/rest.do#descPDB">RCSB's RESTful Web Service
@@ -56,11 +56,11 @@ import java.util.logging.Logger;
 
 public class RCSBLigandsFactory {
 
-	private static final String HET_URL_STUB = "http://www.pdb.org/pdb/rest/describeHet?chemicalID=";
+	private static final String HET_URL_STUB = "http://www.rcsb.org/pdb/rest/describeHet?chemicalID=";
 
 	private static final Logger logger = Logger.getLogger(RCSBLigandsFactory.class.getPackage().getName());
 
-	private static final String PDB_URL_STUB = "http://www.pdb.org/pdb/rest/ligandInfo?structureId=";
+	private static final String PDB_URL_STUB = "http://www.rcsb.org/pdb/rest/ligandInfo?structureId=";
 
 	/**
 	 * @return A list of {@link RCSBLigand RCSBLigands} from the XML file loaded as {@code stream}. Prefer calling
