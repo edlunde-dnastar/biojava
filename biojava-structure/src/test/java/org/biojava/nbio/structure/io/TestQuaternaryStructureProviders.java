@@ -21,7 +21,19 @@
 
 package org.biojava.nbio.structure.io;
 
-import org.biojava.nbio.structure.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+
+import java.io.IOException;
+import java.util.List;
+import java.util.Map;
+
+import org.biojava.nbio.structure.Atom;
+import org.biojava.nbio.structure.PDBHeader;
+import org.biojava.nbio.structure.Structure;
+import org.biojava.nbio.structure.StructureException;
+import org.biojava.nbio.structure.StructureIO;
+import org.biojava.nbio.structure.StructureTools;
 import org.biojava.nbio.structure.align.util.AtomCache;
 import org.biojava.nbio.structure.quaternary.BioAssemblyInfo;
 import org.biojava.nbio.structure.quaternary.BiologicalAssemblyTransformation;
@@ -29,13 +41,6 @@ import org.biojava.nbio.structure.quaternary.io.BioUnitDataProviderFactory;
 import org.biojava.nbio.structure.quaternary.io.MmCifBiolAssemblyProvider;
 import org.biojava.nbio.structure.quaternary.io.PDBBioUnitDataProvider;
 import org.junit.Test;
-
-import java.io.IOException;
-import java.util.List;
-import java.util.Map;
-
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 
 public class TestQuaternaryStructureProviders {
 
@@ -54,7 +59,9 @@ public class TestQuaternaryStructureProviders {
 	public void test5LDH() throws IOException, StructureException{
 		testID("5LDH",1);
 		testID("5LDH",2);
-		// in 5ldh there's also PAU and XAU but those are ignored, see github issue #230
+	
+		// since v5 remediation there's 4 bioassemblies with numerical ids for 5ldh, no more PAU and XAU
+		
 		MmCifBiolAssemblyProvider mmcifProvider = new MmCifBiolAssemblyProvider();
 		BioUnitDataProviderFactory.setBioUnitDataProvider(mmcifProvider.getClass());
 
@@ -65,7 +72,7 @@ public class TestQuaternaryStructureProviders {
 			gotException = true;
 		}
 
-		assertTrue("Bioassembly 3 for PDB id 5LDH should fail with a StructureException!", gotException);
+		assertTrue("Bioassembly 3 for PDB id 5LDH should fail with a StructureException!", !gotException);
 
 	}
 
@@ -86,7 +93,8 @@ public class TestQuaternaryStructureProviders {
 
 	@Test
 	public void testGetNrBioAssemblies5LDH() throws IOException, StructureException {
-		assertEquals("There should be only 2 bioassemblies for 5LDH, see github issue #230", 2, StructureIO.getNrBiologicalAssemblies("5LDH"));
+		// assertEquals("There should be only 2 bioassemblies for 5LDH, see github issue #230", 2, StructureIO.getNrBiologicalAssemblies("5LDH"));
+		assertEquals("There should be 4 bioassemblies for 5LDH, see github issue #230", 4, StructureIO.getNrBiologicalAssemblies("5LDH"));
 	}
 
 

@@ -20,15 +20,17 @@
  */
 package org.biojava.nbio.structure.io;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+
+import java.io.IOException;
+
 import org.biojava.nbio.structure.Structure;
 import org.biojava.nbio.structure.StructureException;
 import org.biojava.nbio.structure.StructureIO;
 import org.biojava.nbio.structure.align.util.AtomCache;
 import org.junit.Test;
-
-import java.io.IOException;
-
-import static org.junit.Assert.*;
 
 /**
  * Testing for title parsing in PDB and mmCIF files
@@ -54,8 +56,7 @@ public class TestTitleParsing {
 		Structure sCif = StructureIO.getStructure("2W6E");
 
 
-		// we can only compare titles by first forcing lower case, since the cases don't coincide cif vs pdb
-		assertEquals(sPdb.getPDBHeader().getTitle().toLowerCase(),sCif.getPDBHeader().getTitle().toLowerCase());
+		assertEquals(sPdb.getPDBHeader().getTitle().toLowerCase().replace(" ", ""), sCif.getPDBHeader().getTitle().toLowerCase().replace(" ", ""));
 
 		assertEquals(1, sPdb.getPDBHeader().getExperimentalTechniques().size());
 		assertEquals(1, sCif.getPDBHeader().getExperimentalTechniques().size());
